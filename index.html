@@ -3,379 +3,457 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>금나림 님 포트폴리오 질문 답변</title>
+<title>금나림 NARIM · 포트폴리오 질문 답변</title>
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<meta property="og:title" content="금나림 NARIM · 포트폴리오 질문 답변">
+<meta property="og:image" content="img/profile.webp">
+<link rel="icon" href="img/profile.webp">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <style>
   :root{
-    --bg:#f7f7f9; --card:#fff; --ink:#15161a; --sub:#5b5f6b; --line:#e6e7ec;
-    --blue:#0060ff; --blue-soft:#eaf1ff; --pink:#ff4f8b; --pink-soft:#ffecf3;
-    --mint:#00a37a; --mint-soft:#e5f7f1; --amber:#b86e00; --amber-soft:#fff4e0;
+    --pink:#ff54b0; --pink-d:#c93d8a; --pink-a:rgba(255,84,176,.14);
+    --bg:#000; --card:#111114; --card2:#18181d; --line:#26262d;
+    --ink:#f5f5f7; --sub:#a0a0ab; --dim:#6d6d78; --yellow:#ffe14d;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all}
-  a{color:var(--blue);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
-  header.hero{background:linear-gradient(135deg,#0b0f1e 0%,#1b2a5c 60%,#3a1d4f 100%);color:#fff;padding:64px 0 48px}
-  .hero .tag{display:inline-block;font-size:13px;font-weight:600;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:999px;margin-bottom:16px}
-  .hero h1{font-size:34px;line-height:1.3;margin:0 0 12px;font-weight:800}
-  .hero p{margin:0;color:#c9cfe4;font-size:16px}
-  nav.toc{position:sticky;top:0;z-index:10;background:rgba(247,247,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
-  nav.toc a{white-space:nowrap;font-size:14px;font-weight:600;color:var(--sub);padding:6px 12px;border-radius:999px}
-  nav.toc a:hover{background:#fff;color:var(--ink);text-decoration:none}
-  section{padding:48px 0 8px}
-  h2{font-size:26px;line-height:1.35;margin:0 0 8px;font-weight:800}
-  h2 .num{color:var(--blue);margin-right:6px}
-  h3{font-size:19px;margin:32px 0 10px;font-weight:700}
-  .lead{color:var(--sub);font-size:16px;margin:0 0 20px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:14px 0}
-  .q{background:var(--blue-soft);border:none;color:#1b2b55}
-  .q b{color:var(--blue)}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-  .stat .v{font-size:26px;font-weight:800;line-height:1.2}
-  .stat .l{font-size:13px;color:var(--sub);margin-top:4px}
-  .pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;margin-right:4px}
-  .p-blue{background:var(--blue-soft);color:var(--blue)}
-  .p-pink{background:var(--pink-soft);color:var(--pink)}
-  .p-mint{background:var(--mint-soft);color:var(--mint)}
-  .p-amber{background:var(--amber-soft);color:var(--amber)}
-  .jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .job{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
-  .job .rank{font-size:13px;font-weight:700;color:var(--sub)}
-  .job h4{margin:2px 0 10px;font-size:17px}
-  .job ul{margin:0;padding-left:18px;font-size:14px;color:#33363f}
-  .job li{margin:3px 0}
-  div.tree{background:#0f1220;color:#dfe5ff;border-radius:14px;padding:18px 22px;font-size:14px;margin:14px 0}
-  div.tree .root{font-weight:700;margin-bottom:6px}
-  div.tree .row{display:grid;grid-template-columns:210px 1fr;gap:12px;padding:6px 0 6px 14px;border-left:2px solid #2e3655}
-  div.tree .n{font-family:Consolas,monospace;color:#9fc0ff}
-  div.tree .c{color:#aab3d6}
-  @media (max-width:760px){div.tree .row{grid-template-columns:1fr;gap:0}}
-  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:14px 0}
-  th,td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-  th{background:#f1f2f6;font-weight:700;font-size:13px;color:#3c404b}
-  tr:last-child td{border-bottom:none}
-  .works{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
-  .work{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-  .work .thumb{aspect-ratio:16/9;background:#ddd center/cover no-repeat;position:relative}
-  .work .thumb span{position:absolute;left:10px;top:10px}
-  .work .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
-  .work .t{font-weight:700;font-size:15px;line-height:1.4}
-  .work .en{font-size:12px;color:var(--sub)}
-  .work .role{font-size:13px;color:#33363f}
-  .work .metric{font-size:13px;font-weight:700;color:var(--blue)}
-  .work .links{margin-top:auto;font-size:13px;display:flex;gap:10px;flex-wrap:wrap}
-  .tip{border-left:4px solid var(--blue);background:var(--card);padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0;font-size:15px}
-  .warn{border-left-color:var(--amber)}
-  .good{border-left-color:var(--mint)}
-  .example{background:#fbfbfd;border:1px dashed #c9ccd6;border-radius:14px;padding:18px 20px;margin:12px 0;font-size:15px}
-  .example .h{font-weight:800;margin-bottom:6px}
-  .example dl{display:grid;grid-template-columns:72px 1fr;gap:4px 12px;margin:0}
-  .example dt{font-weight:700;color:var(--sub);font-size:14px}
-  .example dd{margin:0}
-  .fill{background:#fff2b3;padding:0 4px;border-radius:4px;font-weight:700}
-  ol.todo{padding-left:20px}
-  ol.todo li{margin:8px 0}
-  footer{padding:48px 0 64px;color:var(--sub);font-size:13px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif;line-height:1.65;letter-spacing:-0.01em;word-break:keep-all}
+  a{color:var(--pink);text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+
+  /* 흐르는 띠 */
+  .marquee{background:var(--pink);color:#111;overflow:hidden;white-space:nowrap;font-weight:700;font-size:15px;letter-spacing:.04em}
+  .marquee .track{display:inline-flex;gap:48px;padding:12px 0;animation:flow 22s linear infinite}
+  .marquee span::after{content:"✦";margin-left:48px}
+  @keyframes flow{to{transform:translateX(-50%)}}
+
+  /* 프로필 */
+  .profile{text-align:center;padding:56px 0 24px}
+  .avatar{width:132px;height:132px;border-radius:50%;margin:0 auto 18px;border:3px solid var(--pink);padding:4px;background:#000}
+  .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+  .profile h1{margin:0;font-size:30px;font-weight:800;color:var(--pink)}
+  .profile .bio{color:var(--sub);margin:6px 0 4px;font-size:15px}
+  .profile .school{display:inline-block;margin-top:8px;font-size:13px;color:var(--pink);background:var(--pink-a);padding:4px 12px;border-radius:999px;font-weight:600}
+  .sns{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:22px 0 0}
+  .sns a{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;transition:.15s}
+  .sns a:hover{border-color:var(--pink);color:var(--pink)}
+  .sns img{width:16px;height:16px}
+
+  .intro{margin:36px auto 0;max-width:640px;text-align:center;background:linear-gradient(135deg,#1b0c16,#120a1a);border:1px solid #3a1730;border-radius:20px;padding:22px 24px}
+  .intro b{color:var(--pink)}
+  .intro p{margin:0;color:#e3d6de;font-size:15px}
+
+  /* 탭 */
+  nav.tabs{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:40px}
+  nav.tabs .wrap{display:flex;justify-content:center;gap:4px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+  nav.tabs a{white-space:nowrap;font-size:14px;font-weight:700;color:#7a3f60;padding:6px 12px;border-radius:999px}
+  nav.tabs a:hover{color:var(--pink);background:var(--pink-a)}
+
+  section{padding:56px 0 8px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--pink);text-transform:uppercase;margin-bottom:6px}
+  h2{font-size:26px;line-height:1.35;margin:0 0 6px;font-weight:800}
+  h3{font-size:18px;margin:34px 0 12px;font-weight:700}
+  .lead{color:var(--sub);margin:0 0 22px;font-size:15px}
+
+  /* 숫자 */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 16px;text-align:center}
+  .stat .v{font-size:28px;font-weight:800;color:var(--pink);line-height:1.15}
+  .stat .l{font-size:12px;color:var(--sub);margin-top:6px}
+
+  /* 앨범 */
+  .albums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .album{background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--line);transition:.2s}
+  .album:hover{transform:translateY(-4px);border-color:var(--pink)}
+  .album img{aspect-ratio:1/1;width:100%;object-fit:cover}
+  .album .b{padding:14px 16px 16px}
+  .album .t{font-weight:700;color:var(--pink);font-size:15px}
+  .album .d{font-size:12px;color:var(--dim)}
+  .album .r{font-size:13px;color:var(--sub);margin-top:6px}
+  .album .m{display:flex;gap:10px;margin-top:10px;font-size:13px;font-weight:600}
+
+  .video{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-top:18px;background:#111}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* 쇼츠 */
+  .shorts{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x mandatory}
+  .short{flex:0 0 200px;scroll-snap-align:start}
+  .short .frame{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#111}
+  .short iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .short .cap{margin-top:8px;font-size:13px;line-height:1.4}
+  .short .cap b{color:var(--pink);display:block;font-size:15px}
+  .scroll-hint{font-size:12px;color:var(--dim);text-align:right;margin-top:-4px}
+
+  /* 직무 */
+  .jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .job{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .job .img{aspect-ratio:4/3;background:#222 center/cover no-repeat;position:relative}
+  .job .img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent 55%)}
+  .job .img .rk{position:absolute;left:14px;bottom:12px;z-index:1;font-weight:800;font-size:17px}
+  .job .img .rk small{display:block;font-size:12px;color:var(--pink);font-weight:700}
+  .job ul{margin:0;padding:14px 16px 16px 32px;font-size:13.5px;color:#d6d6dc}
+  .job li{margin:4px 0}
+
+  /* 질문 */
+  .qbox{background:var(--card2);border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:14px;padding:16px 20px;color:#d9d9e0;font-size:15px}
+  .qbox b{color:var(--pink)}
+  .answer{margin:16px 0;background:var(--pink);color:#160611;border-radius:16px;padding:18px 22px;font-size:16px;font-weight:600}
+  .answer b{font-weight:800}
+
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center}
+  .step .n{width:30px;height:30px;border-radius:50%;background:var(--pink-a);color:var(--pink);font-weight:800;display:grid;place-items:center;margin:0 auto 8px}
+  .step .k{font-weight:700;font-size:14px}
+  .step .s{font-size:12px;color:var(--sub);margin-top:2px}
+  .step.hl{border-color:var(--pink)}
+
+  .works{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .work{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+  .work:hover{border-color:var(--pink)}
+  .work .thumb{aspect-ratio:16/10;background:#222 center/cover no-repeat;position:relative}
+  .work .thumb .tag{position:absolute;left:10px;top:10px;font-size:11px;font-weight:800;background:var(--pink);color:#160611;padding:3px 9px;border-radius:999px}
+  .work .thumb .play{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.6);display:grid;place-items:center}
+  .work .thumb .play::before{content:"";border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+  .work .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+  .work .t{font-weight:700;font-size:15px}
+  .work .en{font-size:12px;color:var(--dim)}
+  .work .role{font-size:13px;color:var(--sub);margin-top:2px}
+  .work .metric{font-size:13px;font-weight:800;color:var(--pink);margin-top:2px}
+  .work .links{margin-top:auto;padding-top:8px;display:flex;gap:10px;flex-wrap:wrap;font-size:13px;font-weight:600}
+
+  .tree{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+  .tree .root{font-weight:800;color:var(--pink);margin-bottom:8px}
+  .tree .row{display:grid;grid-template-columns:200px 1fr;gap:12px;padding:7px 0 7px 14px;border-left:2px solid #3a1730;font-size:14px}
+  .tree .n{font-family:Consolas,monospace;color:#ffb3dc}
+  .tree .c{color:var(--sub)}
+
+  .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+  .tip{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:14px;color:#d6d6dc}
+  .tip .ic{font-size:22px;margin-bottom:4px}
+  .tip b{color:var(--ink)}
+
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 14px}
+  .metric .ic{font-size:22px}
+  .metric .k{font-weight:700;font-size:14px;margin-top:6px}
+  .metric .s{font-size:12px;color:var(--sub);margin-top:2px}
+  .metric.star{border-color:var(--pink);background:linear-gradient(160deg,#25101e,#111114)}
+  .metric.star .k{color:var(--pink)}
+
+  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .case{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:120px 1fr}
+  .case .pic{background:#222 center/cover no-repeat}
+  .case .b{padding:14px 16px}
+  .case .h{font-size:12px;font-weight:800;color:var(--pink)}
+  .case .tt{font-weight:700;font-size:15px;margin:2px 0 8px}
+  .case dl{display:grid;grid-template-columns:38px 1fr;gap:3px 8px;margin:0;font-size:13px}
+  .case dt{color:var(--dim);font-weight:700}
+  .case dd{margin:0;color:#d6d6dc}
+  .fill{background:var(--yellow);color:#111;padding:0 5px;border-radius:4px;font-weight:800}
+
+  .press{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .press a{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;color:var(--ink);transition:.2s}
+  .press a:hover{border-color:var(--pink)}
+  .press img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:0 0 64px}
+  .press .k{font-size:12px;color:var(--pink);font-weight:700}
+  .press .t{font-size:14px;font-weight:700;line-height:1.35}
+
+  .todo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;counter-reset:t}
+  .todo div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;font-size:14px;counter-increment:t}
+  .todo div::before{content:counter(t,decimal-leading-zero);display:block;font-weight:800;color:var(--pink);font-size:20px;margin-bottom:4px}
+
+  footer{padding:56px 0 72px;text-align:center;color:var(--dim);font-size:12px}
+  footer a{font-weight:700}
+
   @media (max-width:760px){
-    .hero h1{font-size:26px}
-    .stats{grid-template-columns:repeat(2,1fr)}
-    .jobs,.works{grid-template-columns:1fr}
+    .stats,.metrics{grid-template-columns:repeat(2,1fr)}
+    .albums,.jobs,.works,.press,.todo,.tips,.cases{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .tree .row{grid-template-columns:1fr;gap:0}
     h2{font-size:22px}
+    .short{flex-basis:170px}
   }
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="tag">포트폴리오 질문 답변</span>
-    <h1>나림 님, 이미 갖고 있는 자료로<br>충분히 '실무형' 포트폴리오를 만들 수 있어요</h1>
-    <p>유튜브·틱톡·인스타그램·음원·인터뷰에 공개된 활동을 모두 살펴보고, 질문 순서대로 답변드립니다.</p>
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>NARIM</span><span>금나림</span><span>NARIM</span><span>SINGER-SONGWRITER</span><span>NARIM</span><span>PERFORMER</span><span>NARIM</span><span>금나림</span>
+  <span>NARIM</span><span>금나림</span><span>NARIM</span><span>SINGER-SONGWRITER</span><span>NARIM</span><span>PERFORMER</span><span>NARIM</span><span>금나림</span>
+</div></div>
+
+<header class="wrap profile">
+  <div class="avatar"><img src="img/profile.webp" alt="금나림 프로필 사진"></div>
+  <h1>금나림 NARIM</h1>
+  <div class="bio">Singer-Songwriter &amp; Performer · Korea</div>
+  <div class="school">동아방송예술대학교 K-POP과 졸업</div>
+  <div class="sns">
+    <a href="https://www.youtube.com/@narimgeum" target="_blank"><img src="https://cdn.simpleicons.org/youtube/ff54b0" alt="">YouTube</a>
+    <a href="https://www.instagram.com/narimgeum" target="_blank"><img src="https://cdn.simpleicons.org/instagram/ff54b0" alt="">Instagram</a>
+    <a href="https://www.tiktok.com/@narimgeum" target="_blank"><img src="https://cdn.simpleicons.org/tiktok/ff54b0" alt="">TikTok</a>
+    <a href="https://open.spotify.com/artist/0XtR6qwZjnHFJdmcnVHZyv" target="_blank"><img src="https://cdn.simpleicons.org/spotify/ff54b0" alt="">Spotify</a>
+    <a href="https://music.apple.com/kr/artist/narim/1755308249" target="_blank"><img src="https://cdn.simpleicons.org/applemusic/ff54b0" alt="">Apple Music</a>
+    <a href="https://www.melon.com/artist/timeline.htm?artistId=3868998" target="_blank">🍈 Melon</a>
+    <a href="https://lnkpie.com/@narimgeum" target="_blank">🥧 Linkpie</a>
+  </div>
+
+  <div class="intro">
+    <p>나림 님, 질문 주신 <b>2번(링크 자료 정리)</b>과 <b>3번(실무 역량 지표)</b>에 대한 답이에요.<br>
+    유튜브·틱톡·인스타그램·음원·인터뷰를 모두 살펴보니, <b>이미 갖고 있는 자료만으로도 실무형 포트폴리오를 충분히 만들 수 있어요.</b></p>
   </div>
 </header>
 
-<nav class="toc">
-  <div class="wrap">
-    <a href="#asset">지금 가진 자산</a>
-    <a href="#jobs">희망 직무별 대표 자료</a>
-    <a href="#q2">2. 링크 자료 정리</a>
-    <a href="#q3">3. 실무 역량 지표</a>
-    <a href="#todo">바로 할 일</a>
-  </div>
-</nav>
+<nav class="tabs"><div class="wrap">
+  <a href="#now">NOW</a>
+  <a href="#music">MUSIC</a>
+  <a href="#shorts">SHORTS</a>
+  <a href="#jobs">희망 직무</a>
+  <a href="#q2">Q2 링크 정리</a>
+  <a href="#q3">Q3 실무 지표</a>
+  <a href="#todo">TO DO</a>
+</div></nav>
 
 <main class="wrap">
 
-<!-- ───────── 자산 요약 ───────── -->
-<section id="asset">
-  <h2>먼저, 지금 갖고 계신 것부터 정리해 봤어요</h2>
-  <p class="lead">2026년 11월 21일 기준으로 공개된 숫자입니다. 포트폴리오 첫 장에 이 숫자들을 그대로 쓰셔도 됩니다.</p>
-
+<!-- NOW -->
+<section id="now">
+  <div class="eyebrow">Now</div>
+  <h2>지금 나림 님이 가진 숫자</h2>
+  <p class="lead">2026년 11월 21일 기준 공개 숫자예요. 포트폴리오 첫 장에 그대로 쓰셔도 돼요.</p>
   <div class="stats">
-    <div class="stat"><div class="v">38.9만</div><div class="l">유튜브 누적 조회수<br>(영상 179개, 구독자 3천)</div></div>
-    <div class="stat"><div class="v">4.67만</div><div class="l">틱톡 누적 좋아요<br>(팔로워 1,180)</div></div>
-    <div class="stat"><div class="v">2,529</div><div class="l">인스타그램 팔로워<br>(@narimgeum)</div></div>
-    <div class="stat"><div class="v">싱글 3장</div><div class="l">작사·작곡·안무 직접<br>(2024.07 ~ 2025.08)</div></div>
-  </div>
-
-  <div class="card">
-    <p style="margin:0 0 10px"><b>살펴보면서 눈에 띈 강점 다섯 가지</b></p>
-    <ul style="margin:0;padding-left:20px">
-      <li><b>곡 기획부터 안무·홍보까지 혼자 해 본 아티스트</b>입니다. 싱글 3장(「똑똑똑」, 「짝사랑 크리스마스」, 「그냥 춤을 춰!」) 모두 작사·작곡에 참여했고, 안무를 직접 만들었고, 뮤직비디오 소품 의견까지 냈어요.</li>
-      <li><b>해외 시청자를 겨냥한 영어 숏폼</b>을 이미 꾸준히 만들고 있어요. "let me show u my life in korea as an artist and kpop music major", "what a k-pop major does after class" 같은 시리즈가 대표적입니다.</li>
-      <li><b>브랜드 콘텐츠 제작 경험</b>이 있습니다. LG유플러스 대학생 앰배서더 '유쓰피릿'으로 갤럭시 S26, MWC26, 유플러스 체인지 페스타 영상을 만들었어요. 3번 마케팅 직무에 바로 쓸 수 있는 경력입니다.</li>
-      <li><b>터진 영상이 있어요.</b> BTS 컴백 쇼츠가 12만 회, 「소중한 건 지금이야」가 2.9만 회, aespa·ILLIT 댄스 커버가 각각 1만 회를 넘었습니다.</li>
-      <li><b>외부에서 검증받은 기록</b>이 있습니다. 지니 매거진 인터뷰 2편, 케이인디 매거진 인터뷰 1편, 그리고 동아방송예술대학교 K-POP과 졸업(3번째 싱글이 졸업곡).</li>
-    </ul>
+    <div class="stat"><div class="v">38.9만</div><div class="l">유튜브 누적 조회수<br>영상 179개 · 구독자 3천</div></div>
+    <div class="stat"><div class="v">4.67만</div><div class="l">틱톡 누적 좋아요<br>팔로워 1,180</div></div>
+    <div class="stat"><div class="v">2,529</div><div class="l">인스타그램<br>팔로워</div></div>
+    <div class="stat"><div class="v">12만</div><div class="l">최고 조회 쇼츠<br>(BTS 컴백 반응)</div></div>
   </div>
 </section>
 
-<!-- ───────── 희망 직무 ───────── -->
-<section id="jobs">
-  <h2>희망 직무 순서에 맞춘 대표 자료</h2>
-  <p class="lead">자료는 같아도 <b>지원하는 직무에 따라 맨 앞에 둘 것</b>이 달라집니다. 직무마다 앞세울 자료를 골라 봤어요.</p>
+<!-- MUSIC -->
+<section id="music">
+  <div class="eyebrow">Music</div>
+  <h2>싱글 3장, 전부 직접 쓰고 직접 춤췄어요</h2>
+  <p class="lead">작사·작곡에 참여하고 안무까지 직접 만든 곡들이에요. 아티스트 직무에서 가장 앞에 둘 자료예요.</p>
+  <div class="albums">
+    <div class="album">
+      <img src="img/album-dancin.webp" alt="그냥 춤을 춰! 앨범 커버" loading="lazy">
+      <div class="b">
+        <div class="t">그냥 춤을 춰!</div>
+        <div class="d">Dancin' Like It's Mine · 2025.08.06 · 졸업곡</div>
+        <div class="r">작사·공동 작곡·보컬·안무 · 뮤직비디오 소품 아이디어 제안</div>
+        <div class="m"><a href="https://www.youtube.com/watch?v=5UdC2SaVQg8" target="_blank">MV 1.4천</a><a href="https://www.youtube.com/watch?v=imr82MNM7ck" target="_blank">Making</a><a href="https://lnkpie.com/@narimgeum/aJLmZk35q" target="_blank">듣기</a></div>
+      </div>
+    </div>
+    <div class="album">
+      <img src="img/album-christmas.webp" alt="짝사랑 크리스마스 앨범 커버" loading="lazy">
+      <div class="b">
+        <div class="t">짝사랑 크리스마스</div>
+        <div class="d">Knew All About This Christmas · 2024.11.27</div>
+        <div class="r">곡 제작 + 발매 전후 한 달간 숏폼 약 25편 연재</div>
+        <div class="m"><a href="https://www.youtube.com/watch?v=9XV0OY2_pgo" target="_blank">MV 1.2천</a><a href="https://www.youtube.com/watch?v=vlLpeVx54f0" target="_blank">Behind</a><a href="https://lnkpie.com/@narimgeum/aaFD2aMT5" target="_blank">듣기</a></div>
+      </div>
+    </div>
+    <div class="album">
+      <img src="img/album-knock.webp" alt="똑똑똑 앨범 커버" loading="lazy">
+      <div class="b">
+        <div class="t">똑똑똑</div>
+        <div class="d">Knock Knock Knock · 2024.07.10 · 데뷔</div>
+        <div class="r">작사·작곡·보컬 · 하이라이트 안무 직접 제작</div>
+        <div class="m"><a href="https://www.youtube.com/watch?v=I5TqciqA6Zc" target="_blank">MV 1.8천</a><a href="https://www.youtube.com/watch?v=9wj0vnqZPcI" target="_blank">Behind</a><a href="https://lnkpie.com/@narimgeum/aKaPikUyP" target="_blank">듣기</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="video"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/5UdC2SaVQg8" title="그냥 춤을 춰! 뮤직비디오" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</section>
 
+<!-- SHORTS -->
+<section id="shorts">
+  <div class="eyebrow">Shorts</div>
+  <h2>반응이 크게 온 숏폼</h2>
+  <p class="lead">'무엇이 터지는지 아는 감각'을 보여주는 증거예요. 옆으로 넘겨 보세요.</p>
+  <div class="shorts">
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/TWaiqgXMZzk" title="BTS 쇼츠" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>12만 회</b>BTS 컴백 당일 반응</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/fkjR0erx32I" title="소중한 건 지금이야" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>2.9만 회</b>소중한 건 지금이야</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/bfiRP7va-Do" title="aespa Supernova 커버" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>1.3만 회</b>aespa Supernova 커버</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/djuhMbkki1w" title="ILLIT Magnetic 커버" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>1.2만 회</b>ILLIT Magnetic 커버</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/l8b0yaxoE8Y" title="Antifragile 커버" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>1만 회</b>동아방송예대 K-POP과 · Antifragile</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/R0WAqLaYM1U" title="영어 숏폼" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>틱톡 1,814회</b>영어 숏폼 · K-POP 전공생의 한국 생활</div></div>
+  </div>
+  <div class="scroll-hint">← 옆으로 넘기기 →</div>
+</section>
+
+<!-- JOBS -->
+<section id="jobs">
+  <div class="eyebrow">Target Jobs</div>
+  <h2>희망 직무마다 맨 앞에 둘 자료</h2>
+  <p class="lead">자료는 같아도 지원하는 직무에 따라 순서만 바꿔 주세요.</p>
   <div class="jobs">
     <div class="job">
-      <div class="rank">1순위</div>
-      <h4>해외 타깃 아티스트·배우</h4>
+      <div class="img" style="background-image:url(https://i.ytimg.com/vi/5UdC2SaVQg8/hqdefault.jpg)"><div class="rk"><small>1순위</small>해외 아티스트·배우</div></div>
       <ul>
-        <li>뮤직비디오 3편 + 메이킹·비하인드</li>
-        <li>영어 숏폼 시리즈 (한국에서 K-POP 전공생으로 사는 일상)</li>
-        <li>보컬 커버 (아이유 「스물셋」, 악뮤 「200%」, 에스파 「Thirsty」)</li>
-        <li>연기 쪽: 넷플릭스·K드라마 관련 쇼츠, 배우 프로필 사진</li>
-        <li>지니·케이인디 인터뷰</li>
+        <li>뮤직비디오 3편 + 메이킹</li>
+        <li>영어 숏폼 시리즈</li>
+        <li>보컬 커버 (아이유 「스물셋」, 악뮤 「200%」)</li>
+        <li>배우 프로필 · 드라마 관련 쇼츠</li>
       </ul>
     </div>
     <div class="job">
-      <div class="rank">2순위</div>
-      <h4>해외 K-POP 교육</h4>
+      <div class="img" style="background-image:url(https://i.ytimg.com/vi/G52SsmO2R2E/hqdefault.jpg)"><div class="rk"><small>2순위</small>해외 K-POP 교육</div></div>
       <ul>
-        <li>직접 만든 안무 (「똑똑똑」, 「그냥 춤을 춰!」 안무 영상)</li>
-        <li>「똑똑똑」 챌린지: 친구들과 함께 춘 영상 = 남에게 안무를 전달해 본 경험</li>
-        <li>동아방송예대 K-POP과 커버 (예나 「SMILEY」 댄싱 보컬, 부석순)</li>
-        <li>댄스 커버 1만 회 이상 3편 (aespa, ILLIT, 르세라핌)</li>
-        <li>추가하면 좋은 것: 영어로 안무를 가르치는 1분 샘플</li>
+        <li>직접 만든 안무 2곡</li>
+        <li>「똑똑똑」 챌린지 = 안무를 남에게 전달해 본 경험</li>
+        <li>K-POP과 댄싱 보컬 커버</li>
+        <li>+ 영어로 가르치는 1분 샘플 추천</li>
       </ul>
     </div>
     <div class="job">
-      <div class="rank">3순위</div>
-      <h4>해외 한국 제품·서비스 마케팅</h4>
+      <div class="img" style="background-image:url(https://i.ytimg.com/vi/G0_Vgxp9sU4/hqdefault.jpg)"><div class="rk"><small>3순위</small>해외 한국 제품·서비스 마케팅</div></div>
       <ul>
-        <li>LG유플러스 '유쓰피릿' 브랜드 숏폼 (갤럭시 S26, MWC26 등)</li>
-        <li>내 음원 홍보 캠페인 2건 (크리스마스 싱글 숏폼 연재, 3번째 싱글 D-3 티저)</li>
-        <li>영어 숏폼으로 해외 시청자를 모은 경험</li>
-        <li>정보형 숏폼 (「해외전화 무료로 하는 방법」 3.1천 회)</li>
-        <li>채널 3곳 동시 운영 (유튜브·틱톡·인스타)</li>
+        <li>LG유플러스 앰배서더 '유쓰피릿' 브랜드 숏폼</li>
+        <li>내 음원 홍보 캠페인 2건</li>
+        <li>정보형 숏폼 (해외전화 꿀팁 3.1천)</li>
+        <li>채널 3곳 동시 운영</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ───────── Q2 ───────── -->
+<!-- Q2 -->
 <section id="q2">
-  <h2><span class="num">2.</span>외부 링크 자료는 이렇게 정리하세요</h2>
-  <div class="card q"><b>질문</b> 유튜브 영상이나 매거진 인터뷰처럼 링크 형태의 자료들을 폴더에 정리할 때 어떤 방식으로 구성하는 것이 적합할까요?</div>
+  <div class="eyebrow">Question 02</div>
+  <h2>링크 자료는 이렇게 정리하세요</h2>
+  <div class="qbox"><b>Q.</b> 유튜브 영상이나 매거진 인터뷰처럼 링크 형태의 자료들을 폴더에 정리할 때 어떤 방식으로 구성하는 것이 적합할까요?</div>
+  <div class="answer">A. 링크를 나열하지 말고 <b>'작업 카드'</b>로 만드세요. 채용 담당자는 링크를 2~3개만 눌러 봐요. 안 눌러 봐도 나림 님이 뭘 했는지 보여야 해요.</div>
 
-  <div class="tip"><b>한 줄 답:</b> 링크를 나열하지 말고, 링크마다 <b>'작업 카드'</b>를 만들어 주세요. 채용 담당자는 링크를 많아야 2~3개만 눌러 봅니다. 눌러 보지 않아도 무엇인지, 나림 님이 무슨 일을 했는지 알 수 있어야 해요.</div>
+  <h3>작업 카드 한 장에 들어갈 것</h3>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div class="k">썸네일</div><div class="s">대표 장면 1장</div></div>
+    <div class="step"><div class="n">2</div><div class="k">제목</div><div class="s">국문 + 영문</div></div>
+    <div class="step"><div class="n">3</div><div class="k">날짜</div><div class="s">발매·게시일</div></div>
+    <div class="step hl"><div class="n">4</div><div class="k">내 역할</div><div class="s">가장 중요한 칸</div></div>
+    <div class="step"><div class="n">5</div><div class="k">숫자 + 링크</div><div class="s">QR도 함께</div></div>
+  </div>
 
-  <h3>① 작업 카드 하나에 들어갈 다섯 가지</h3>
-  <table>
-    <tr><th style="width:150px">항목</th><th>설명</th></tr>
-    <tr><td>썸네일 1장</td><td>영상이면 대표 장면, 인터뷰면 기사 첫 화면 캡처</td></tr>
-    <tr><td>제목 (국문 + 영문)</td><td>해외 지원이니 영문 제목을 꼭 같이 써 주세요</td></tr>
-    <tr><td>날짜</td><td>발매일·게시일</td></tr>
-    <tr><td><b>내 역할</b></td><td>작사 / 작곡 / 보컬 / 안무 / 기획 / 촬영·편집 / 홍보 중 실제로 맡은 것. <b>가장 중요한 칸</b>이에요</td></tr>
-    <tr><td>숫자 1~2개 + 링크</td><td>조회수·좋아요 같은 숫자 하나, 링크와 QR코드 (종이로 출력해서 볼 때를 대비)</td></tr>
-  </table>
-
-  <h3>② 나림 님 자료로 만든 카드 예시</h3>
-  <p class="lead" style="margin-bottom:0">실제 공개된 숫자를 넣었습니다. 이 모양 그대로 포트폴리오 PDF나 노션에 옮기시면 돼요.</p>
-
+  <h3>나림 님 자료로 만든 카드 예시</h3>
   <div class="works">
     <div class="work">
-      <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/I5TqciqA6Zc/hqdefault.jpg)"><span class="pill p-pink">아티스트</span></div>
-      <div class="body">
-        <div class="t">데뷔 싱글 「똑똑똑」</div>
-        <div class="en">Debut Single "Knock Knock Knock" · 2024.07.10</div>
-        <div class="role">작사·작곡·보컬·하이라이트 안무 직접 제작</div>
-        <div class="metric">뮤직비디오 1.8천 회 · 지니 매거진 인터뷰</div>
-        <div class="links"><a href="https://www.youtube.com/watch?v=I5TqciqA6Zc" target="_blank">뮤직비디오</a><a href="https://www.youtube.com/watch?v=9wj0vnqZPcI" target="_blank">비하인드</a><a href="https://www.genie.co.kr/magazine/subMain?mgz_seq=14429" target="_blank">인터뷰</a></div>
-      </div>
+      <a class="thumb" href="https://www.youtube.com/watch?v=I5TqciqA6Zc" target="_blank" style="background-image:url(img/album-knock.webp)"><span class="tag">ARTIST</span><span class="play"></span></a>
+      <div class="body"><div class="t">데뷔 싱글 「똑똑똑」</div><div class="en">Debut Single · 2024.07.10</div><div class="role">작사·작곡·보컬·하이라이트 안무</div><div class="metric">MV 1.8천 회 · 지니 인터뷰</div>
+      <div class="links"><a href="https://www.youtube.com/watch?v=I5TqciqA6Zc" target="_blank">MV</a><a href="https://www.genie.co.kr/magazine/subMain?mgz_seq=14429" target="_blank">인터뷰</a></div></div>
     </div>
     <div class="work">
-      <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/9XV0OY2_pgo/hqdefault.jpg)"><span class="pill p-amber">홍보 캠페인</span></div>
-      <div class="body">
-        <div class="t">「짝사랑 크리스마스」 발매 홍보</div>
-        <div class="en">Holiday Single Campaign · 2024.11.27</div>
-        <div class="role">곡 제작 + 발매 전후 한 달간 숏폼 약 25편 연재 (상황극·작업기·티저)</div>
-        <div class="metric">뮤직비디오 1.2천 회 · 케이인디 인터뷰</div>
-        <div class="links"><a href="https://www.youtube.com/watch?v=9XV0OY2_pgo" target="_blank">뮤직비디오</a><a href="https://www.youtube.com/shorts/LEa9sFB3pbc" target="_blank">32초 작업기</a><a href="http://www.xindiemagazine.co.kr/index.php?mid=artists&document_srl=11823" target="_blank">인터뷰</a></div>
-      </div>
+      <a class="thumb" href="https://www.youtube.com/shorts/LEa9sFB3pbc" target="_blank" style="background-image:url(img/album-christmas.webp)"><span class="tag">CAMPAIGN</span><span class="play"></span></a>
+      <div class="body"><div class="t">「짝사랑 크리스마스」 홍보</div><div class="en">Holiday Single Campaign · 2024.11</div><div class="role">한 달간 숏폼 약 25편 연재</div><div class="metric">MV 1.2천 회 · 케이인디 인터뷰</div>
+      <div class="links"><a href="https://www.youtube.com/shorts/LEa9sFB3pbc" target="_blank">32초 작업기</a><a href="http://www.xindiemagazine.co.kr/index.php?mid=artists&document_srl=11823" target="_blank">인터뷰</a></div></div>
     </div>
     <div class="work">
-      <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/5UdC2SaVQg8/hqdefault.jpg)"><span class="pill p-pink">아티스트</span></div>
-      <div class="body">
-        <div class="t">3번째 싱글 「그냥 춤을 춰!」 (졸업곡)</div>
-        <div class="en">"Dancin' Like It's Mine" · 2025.08.06</div>
-        <div class="role">작사·공동 작곡·보컬·안무, 뮤직비디오 소품 아이디어 제안</div>
-        <div class="metric">뮤직비디오 1.4천 회 · D-3 티저 쇼츠 2.5천 회</div>
-        <div class="links"><a href="https://www.youtube.com/watch?v=5UdC2SaVQg8" target="_blank">뮤직비디오</a><a href="https://www.youtube.com/watch?v=imr82MNM7ck" target="_blank">메이킹</a><a href="https://www.genie.co.kr/magazine/subMain?ctid=1&mgz_seq=15473" target="_blank">인터뷰</a></div>
-      </div>
+      <a class="thumb" href="https://www.youtube.com/watch?v=5UdC2SaVQg8" target="_blank" style="background-image:url(img/album-dancin.webp)"><span class="tag">ARTIST</span><span class="play"></span></a>
+      <div class="body"><div class="t">「그냥 춤을 춰!」 (졸업곡)</div><div class="en">3rd Single · 2025.08.06</div><div class="role">작사·공동 작곡·보컬·안무</div><div class="metric">MV 1.4천 · D-3 티저 2.5천 회</div>
+      <div class="links"><a href="https://www.youtube.com/watch?v=5UdC2SaVQg8" target="_blank">MV</a><a href="https://www.genie.co.kr/magazine/subMain?ctid=1&mgz_seq=15473" target="_blank">인터뷰</a></div></div>
     </div>
     <div class="work">
-      <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/G0_Vgxp9sU4/hqdefault.jpg)"><span class="pill p-mint">브랜드 마케팅</span></div>
-      <div class="body">
-        <div class="t">LG유플러스 대학생 앰배서더 '유쓰피릿'</div>
-        <div class="en">LG U+ Campus Ambassador · Brand Short-form</div>
-        <div class="role">브랜드 숏폼 기획·출연 (갤럭시 S26, MWC26, 유플러스 체인지 페스타)</div>
-        <div class="metric">편당 400 ~ 1.4천 회</div>
-        <div class="links"><a href="https://www.youtube.com/shorts/G0_Vgxp9sU4" target="_blank">갤럭시 S26</a><a href="https://www.youtube.com/shorts/JoP8WraMD18" target="_blank">MWC26</a><a href="https://www.youtube.com/shorts/XfhGMnSTfE0" target="_blank">체인지 페스타</a></div>
-      </div>
+      <a class="thumb" href="https://www.youtube.com/shorts/G0_Vgxp9sU4" target="_blank" style="background-image:url(https://i.ytimg.com/vi/G0_Vgxp9sU4/hqdefault.jpg)"><span class="tag">BRAND</span><span class="play"></span></a>
+      <div class="body"><div class="t">LG유플러스 '유쓰피릿'</div><div class="en">LG U+ Campus Ambassador</div><div class="role">갤럭시 S26 · MWC26 · 체인지 페스타</div><div class="metric">편당 400 ~ 1.4천 회</div>
+      <div class="links"><a href="https://www.youtube.com/shorts/G0_Vgxp9sU4" target="_blank">S26</a><a href="https://www.youtube.com/shorts/JoP8WraMD18" target="_blank">MWC26</a><a href="https://www.youtube.com/shorts/XfhGMnSTfE0" target="_blank">페스타</a></div></div>
     </div>
     <div class="work">
-      <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/R0WAqLaYM1U/hqdefault.jpg)"><span class="pill p-blue">해외 타깃 콘텐츠</span></div>
-      <div class="body">
-        <div class="t">영어 숏폼: K-POP 전공생의 한국 생활</div>
-        <div class="en">"My life in Korea as a K-pop music major"</div>
-        <div class="role">기획·촬영·편집·영어 자막 전부 직접</div>
-        <div class="metric">틱톡 1,814회 · 유튜브 1.2천 회 (같은 영상)</div>
-        <div class="links"><a href="https://www.tiktok.com/@narimgeum/video/7689154553127636232" target="_blank">틱톡</a><a href="https://www.youtube.com/shorts/R0WAqLaYM1U" target="_blank">유튜브</a><a href="https://www.youtube.com/shorts/GhrGtq07EVM" target="_blank">수업 끝나고</a></div>
-      </div>
+      <a class="thumb" href="https://www.tiktok.com/@narimgeum/video/7689154553127636232" target="_blank" style="background-image:url(https://i.ytimg.com/vi/R0WAqLaYM1U/hqdefault.jpg)"><span class="tag">GLOBAL</span><span class="play"></span></a>
+      <div class="body"><div class="t">영어 숏폼 시리즈</div><div class="en">Life as a K-pop music major</div><div class="role">기획·촬영·편집·영어 자막</div><div class="metric">틱톡 1,814 · 유튜브 1.2천</div>
+      <div class="links"><a href="https://www.tiktok.com/@narimgeum/video/7689154553127636232" target="_blank">틱톡</a><a href="https://www.youtube.com/shorts/GhrGtq07EVM" target="_blank">수업 끝나고</a></div></div>
     </div>
     <div class="work">
-      <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/bfiRP7va-Do/hqdefault.jpg)"><span class="pill p-blue">댄스 · 교육</span></div>
-      <div class="body">
-        <div class="t">K-POP 댄스 커버 대표작</div>
-        <div class="en">K-pop Dance Covers</div>
-        <div class="role">안무 습득·연출·촬영</div>
-        <div class="metric">aespa 1.3만 · ILLIT 1.2만 · LE SSERAFIM 1만 회</div>
-        <div class="links"><a href="https://www.youtube.com/shorts/bfiRP7va-Do" target="_blank">Supernova</a><a href="https://www.youtube.com/shorts/djuhMbkki1w" target="_blank">Magnetic</a><a href="https://www.youtube.com/shorts/l8b0yaxoE8Y" target="_blank">Antifragile</a></div>
-      </div>
+      <a class="thumb" href="https://www.youtube.com/shorts/bfiRP7va-Do" target="_blank" style="background-image:url(https://i.ytimg.com/vi/bfiRP7va-Do/hqdefault.jpg)"><span class="tag">DANCE</span><span class="play"></span></a>
+      <div class="body"><div class="t">댄스 커버 대표작</div><div class="en">K-pop Dance Covers</div><div class="role">안무 습득·연출·촬영</div><div class="metric">1만 회 이상 3편</div>
+      <div class="links"><a href="https://www.youtube.com/shorts/bfiRP7va-Do" target="_blank">aespa</a><a href="https://www.youtube.com/shorts/djuhMbkki1w" target="_blank">ILLIT</a><a href="https://www.youtube.com/shorts/l8b0yaxoE8Y" target="_blank">LSF</a></div></div>
     </div>
   </div>
 
-  <h3>③ 드라이브 폴더는 이렇게 나눠 보세요</h3>
+  <h3>드라이브 폴더 구성</h3>
   <div class="tree">
-    <div class="root">금나림_Portfolio/</div>
-    <div class="row"><span class="n">00_한장요약</span><span class="c">국문·영문 PDF 1장씩. 위 숫자 4개 + 대표작 3개</span></div>
-    <div class="row"><span class="n">01_Artist</span><span class="c">뮤직비디오 3편, 메이킹·비하인드, 보컬 커버, 배우 프로필</span></div>
-    <div class="row"><span class="n">02_Dance_Education</span><span class="c">직접 만든 안무 영상, 똑똑똑 챌린지, 학과 커버, 댄스 커버</span></div>
-    <div class="row"><span class="n">03_Content_Marketing</span><span class="c">유쓰피릿 브랜드 영상, 크리스마스 싱글 숏폼 연재, 영어 숏폼</span></div>
-    <div class="row"><span class="n">04_Press</span><span class="c">지니 인터뷰 2편, 케이인디 인터뷰 1편 (링크 + PDF 저장본)</span></div>
-    <div class="row"><span class="n">05_Analytics</span><span class="c">유튜브 스튜디오·틱톡 분석 화면 캡처 (날짜가 보이게)</span></div>
-    <div class="row"><span class="n">링크목록 (구글 시트)</span><span class="c">번호 | 분류 | 제목 | 날짜 | 내 역할 | 숫자 | URL | 언어</span></div>
+    <div class="root">📁 금나림_Portfolio</div>
+    <div class="row"><span class="n">00_한장요약</span><span class="c">국문·영문 PDF 1장씩 · 숫자 4개 + 대표작 3개</span></div>
+    <div class="row"><span class="n">01_Artist</span><span class="c">뮤직비디오, 메이킹, 보컬 커버, 배우 프로필</span></div>
+    <div class="row"><span class="n">02_Dance_Education</span><span class="c">직접 만든 안무, 챌린지, 학과 커버</span></div>
+    <div class="row"><span class="n">03_Content_Marketing</span><span class="c">유쓰피릿, 크리스마스 캠페인, 영어 숏폼</span></div>
+    <div class="row"><span class="n">04_Press</span><span class="c">인터뷰 3편 (링크 + PDF 저장본)</span></div>
+    <div class="row"><span class="n">05_Analytics</span><span class="c">분석 화면 캡처 (날짜 보이게)</span></div>
+    <div class="row"><span class="n">링크목록 (구글 시트)</span><span class="c">번호 · 분류 · 제목 · 날짜 · 역할 · 숫자 · URL</span></div>
   </div>
 
-  <h3>④ 같이 챙기면 좋은 것</h3>
-  <div class="tip warn"><b>링크는 사라질 수 있어요.</b> 매거진 페이지는 개편되면 주소가 바뀝니다. 인터뷰 3편은 지금 PDF로 저장해 두시고, 뮤직비디오·안무 영상은 원본 파일도 04·01 폴더에 같이 넣어 두세요.</div>
-  <div class="tip"><b>같은 영상이 여러 플랫폼에 있으면 숫자를 합치지 말고 나란히 쓰세요.</b> 예: "틱톡 1,814회 · 유튜브 1.2천 회". 숫자를 부풀렸다는 오해를 피할 수 있고, 어느 플랫폼에서 반응이 좋은지도 함께 보여 줍니다.</div>
-  <div class="tip"><b>쇼츠 164개를 다 넣지 마세요.</b> 직무별로 대표작 3~6개만 고르고, 나머지는 "유튜브 채널 전체 보기" 링크 하나로 충분해요. 긴 영상은 30초~1분 하이라이트 편집본을 따로 만들어 '일부 공개'로 올려 두면 좋습니다.</div>
-  <div class="tip"><b>직무별로 순서만 바꾼 버전 3개</b>를 만들어 두세요. 아티스트 지원이면 01을, 교육이면 02를, 마케팅이면 03을 맨 앞에 둡니다. 지금 쓰시는 링크 모음(lnkpie)도 지원할 때마다 대표작 순서를 바꿔 두면 좋아요.</div>
+  <div class="tips">
+    <div class="tip"><div class="ic">💾</div><b>링크는 사라질 수 있어요.</b> 인터뷰는 PDF로, 영상은 원본 파일로 함께 보관하세요.</div>
+    <div class="tip"><div class="ic">🔢</div><b>플랫폼별 숫자는 합치지 말고 나란히.</b> "틱톡 1,814 · 유튜브 1.2천"처럼요.</div>
+    <div class="tip"><div class="ic">🎯</div><b>쇼츠 164개를 다 넣지 마세요.</b> 직무별 대표작 3~6개 + 채널 링크 하나면 충분해요.</div>
+    <div class="tip"><div class="ic">🔀</div><b>직무별로 순서만 바꾼 3가지 버전.</b> 링크파이 대표작 순서도 지원할 때마다 바꿔 두세요.</div>
+  </div>
 </section>
 
-<!-- ───────── Q3 ───────── -->
+<!-- Q3 -->
 <section id="q3">
-  <h2><span class="num">3.</span>작업물을 '실무 역량'으로 보여주는 지표</h2>
-  <div class="card q"><b>질문</b> 개인적으로 기획하고 제작한 숏폼 콘텐츠나 음악 작업물들을 포트폴리오에 포함시킬 때, 단순 작업물 나열이 아니라 실무 역량으로 어필하기 위해 꼭 포함해야 할 데이터나 지표가 있을까요?</div>
+  <div class="eyebrow">Question 03</div>
+  <h2>작업물을 '실무 역량'으로 보여주는 지표</h2>
+  <div class="qbox"><b>Q.</b> 개인적으로 기획하고 제작한 숏폼 콘텐츠나 음악 작업물들을 포트폴리오에 포함시킬 때, 실무 역량으로 어필하기 위해 꼭 포함해야 할 데이터나 지표가 있을까요?</div>
+  <div class="answer">A. 작업물마다 <b>목표 → 한 일 → 결과</b> 세 줄을 붙이세요. 숫자가 작아도 <b>비교 기준</b>(평소 대비 몇 배, 발매 전과 후)이 있으면 실력이 돼요.</div>
 
-  <div class="tip"><b>한 줄 답:</b> 작업물마다 <b>목표 → 한 일 → 결과</b> 세 줄을 붙이세요. 숫자가 크지 않아도 괜찮아요. <b>비교 기준</b>(평소 대비 몇 배, 발매 전과 후)이 있으면 작은 숫자도 실력이 됩니다.</div>
-
-  <h3>① 숏폼에 넣을 지표</h3>
-  <table>
-    <tr><th style="width:190px">지표</th><th>보여주는 역량</th><th style="width:250px">어디서 보나요</th></tr>
-    <tr><td>조회수, 도달</td><td>기본 규모</td><td>공개 숫자</td></tr>
-    <tr><td><b>채널 평균 대비 배수</b></td><td>무엇이 터지는지 아는 감각</td><td>내 평균 조회수와 비교</td></tr>
-    <tr><td>평균 시청 시간 / 끝까지 본 비율</td><td>첫 3초 구성력, 편집 감각</td><td>유튜브 스튜디오, 틱톡 분석</td></tr>
-    <tr><td>참여율<br>(좋아요+댓글+공유+저장 ÷ 조회수)</td><td>콘텐츠 반응, 팬과의 소통</td><td>직접 계산</td></tr>
-    <tr><td><b>국가별 시청자 비율</b>, 영어 댓글 비율</td><td>해외 시청자를 모을 수 있는지 → <b>세 직무 모두에서 가장 강력한 숫자</b></td><td>유튜브 스튜디오 '시청자층', 틱톡 '시청자'</td></tr>
-    <tr><td>팔로워 증가 수</td><td>계정 성장에 기여한 정도</td><td>업로드 전후 비교</td></tr>
-    <tr><td>제작 기간, 혼자 맡은 범위</td><td>실무 속도, 혼자 해내는 능력</td><td>내 기록</td></tr>
-  </table>
-
-  <h3>② 음악 작업물에 넣을 내용</h3>
-  <ul>
-    <li><b>발매까지의 과정과 내 역할</b>: 기획 → 작사·작곡 → 편곡 협업(함께한 사람 수) → 안무 → 뮤직비디오 → 발매 일정 관리 → 홍보. 나림 님은 이 과정을 세 번이나 끝까지 해 봤다는 게 가장 큰 무기예요.</li>
-    <li><b>음원과 숏폼을 연결한 결과</b>: 음원 스트리밍 숫자는 인디 아티스트에게 불리하게 보일 수 있어요. 그래서 음원 숫자보다 <b>"음원을 알리려고 만든 숏폼이 얼마나 퍼졌는지"</b>를 앞세우는 편이 유리합니다.</li>
-    <li><b>외부 반응</b>: 매거진 인터뷰 3편, 발매 이벤트, 챌린지에 참여한 사람 수.</li>
-  </ul>
-
-  <h3>③ 나림 님 자료로 써 본 예시</h3>
-  <p class="lead" style="margin-bottom:6px">공개된 숫자로 채웠고, <span class="fill">노란 칸</span>은 분석 화면에서 직접 확인해서 채워 주세요.</p>
-
-  <div class="example">
-    <div class="h"><span class="pill p-blue">아티스트 · 콘텐츠</span> 터진 영상을 '감각'으로 설명하기</div>
-    <dl>
-      <dt>목표</dt><dd>K-POP 이슈에 맞춰 빠르게 반응하는 숏폼으로 신규 시청자 유입</dd>
-      <dt>한 일</dt><dd>BTS 컴백 소식에 맞춰 당일 쇼츠 기획·촬영·업로드</dd>
-      <dt>결과</dt><dd>조회수 12만 회, 채널 쇼츠 평균의 약 <span class="fill">○</span>배 · 해외 시청 비율 <span class="fill">○</span>% · 이 영상으로 늘어난 구독자 <span class="fill">○</span>명</dd>
-    </dl>
+  <h3>꼭 챙길 지표</h3>
+  <div class="metrics">
+    <div class="metric star"><div class="ic">🌏</div><div class="k">국가별 시청 비율</div><div class="s">해외 직무 세 개 모두에서 가장 강력한 숫자</div></div>
+    <div class="metric"><div class="ic">📈</div><div class="k">채널 평균 대비 배수</div><div class="s">무엇이 터지는지 아는 감각</div></div>
+    <div class="metric"><div class="ic">⏱️</div><div class="k">끝까지 본 비율</div><div class="s">첫 3초 구성력·편집 감각</div></div>
+    <div class="metric"><div class="ic">💬</div><div class="k">참여율</div><div class="s">(좋아요+댓글+공유+저장) ÷ 조회수</div></div>
+    <div class="metric"><div class="ic">👥</div><div class="k">팔로워 증가</div><div class="s">업로드 전후 비교</div></div>
+    <div class="metric"><div class="ic">🎧</div><div class="k">숏폼 → 음원 연결</div><div class="s">홍보 숏폼이 얼마나 퍼졌는지</div></div>
+    <div class="metric"><div class="ic">🛠️</div><div class="k">혼자 맡은 범위</div><div class="s">기획·촬영·편집·안무·홍보</div></div>
+    <div class="metric"><div class="ic">📰</div><div class="k">외부 반응</div><div class="s">인터뷰 3편, 챌린지 참여 수</div></div>
   </div>
 
-  <div class="example">
-    <div class="h"><span class="pill p-amber">마케팅</span> 내 음원 홍보를 '캠페인'으로 설명하기</div>
-    <dl>
-      <dt>목표</dt><dd>크리스마스 시즌 싱글 「짝사랑 크리스마스」 인지도 확보</dd>
-      <dt>한 일</dt><dd>발매 전후 한 달간 '짝사랑 크리스마스' 상황극·작업기·티저 숏폼 약 25편을 유튜브·틱톡에 연재 (D-20 카운트다운, 32초 작업기, 한·영 자막)</dd>
-      <dt>결과</dt><dd>숏폼 누적 조회수 <span class="fill">○</span>회 · 뮤직비디오 1.2천 회 · 케이인디 매거진 인터뷰 · 발매 주 스트리밍 <span class="fill">○</span>회 (발매 전 주 대비 <span class="fill">○</span>%)</dd>
-    </dl>
+  <h3>나림 님 사례로 써 본 예시 <span style="font-size:13px;font-weight:500;color:var(--sub)">· <span class="fill">노란 칸</span>은 분석 화면에서 직접 채워 주세요</span></h3>
+  <div class="cases">
+    <div class="case"><div class="pic" style="background-image:url(https://i.ytimg.com/vi/TWaiqgXMZzk/hqdefault.jpg)"></div><div class="b">
+      <div class="h">ARTIST · CONTENT</div><div class="tt">이슈에 바로 반응한 쇼츠</div>
+      <dl><dt>목표</dt><dd>신규 시청자 유입</dd><dt>한 일</dt><dd>BTS 컴백 당일 기획·촬영·업로드</dd><dt>결과</dt><dd>12만 회 · 평균의 <span class="fill">○</span>배 · 구독 +<span class="fill">○</span></dd></dl>
+    </div></div>
+    <div class="case"><div class="pic" style="background-image:url(img/album-christmas.webp)"></div><div class="b">
+      <div class="h">MARKETING</div><div class="tt">내 싱글 홍보 캠페인</div>
+      <dl><dt>목표</dt><dd>시즌 싱글 인지도 확보</dd><dt>한 일</dt><dd>한 달간 상황극·작업기·티저 25편 연재</dd><dt>결과</dt><dd>숏폼 누적 <span class="fill">○</span>회 · 발매 주 스트리밍 <span class="fill">○</span>%↑</dd></dl>
+    </div></div>
+    <div class="case"><div class="pic" style="background-image:url(https://i.ytimg.com/vi/JoP8WraMD18/hqdefault.jpg)"></div><div class="b">
+      <div class="h">MARKETING</div><div class="tt">LG유플러스 브랜드 숏폼</div>
+      <dl><dt>목표</dt><dd>2030 타깃 브랜드 콘텐츠</dd><dt>한 일</dt><dd>S26·MWC26 등 <span class="fill">○</span>편 기획·출연·편집</dd><dt>결과</dt><dd>편당 400~1.4천 회 · 공식 채널 게시 <span class="fill">○</span>편</dd></dl>
+    </div></div>
+    <div class="case"><div class="pic" style="background-image:url(https://i.ytimg.com/vi/GhrGtq07EVM/hqdefault.jpg)"></div><div class="b">
+      <div class="h">GLOBAL</div><div class="tt">영어 숏폼으로 해외 반응</div>
+      <dl><dt>목표</dt><dd>해외 K-POP 팬에게 알려지기</dd><dt>한 일</dt><dd>전공생 일상 브이로그 시리즈</dd><dt>결과</dt><dd>편당 1.4~1.8천 회 · 해외 비율 <span class="fill">○</span>%</dd></dl>
+    </div></div>
   </div>
 
-  <div class="example">
-    <div class="h"><span class="pill p-mint">마케팅</span> 브랜드 경험을 숫자로 설명하기</div>
-    <dl>
-      <dt>목표</dt><dd>LG유플러스 대학생 앰배서더로 2030 타깃 브랜드 숏폼 제작</dd>
-      <dt>한 일</dt><dd>갤럭시 S26 출시, MWC26, 유플러스 체인지 페스타 등 <span class="fill">○</span>편 기획·출연·편집</dd>
-      <dt>결과</dt><dd>내 채널 기준 편당 400~1.4천 회 · 브랜드 공식 채널 게시 <span class="fill">○</span>편 · 앰배서더 내 성과 <span class="fill">(수상·선정 이력이 있다면)</span></dd>
-    </dl>
+  <h3>인터뷰 · 외부 기록</h3>
+  <div class="press">
+    <a href="https://www.genie.co.kr/magazine/subMain?ctid=1&mgz_seq=15473" target="_blank"><img src="img/album-dancin.webp" alt=""><div><div class="k">Genie Magazine</div><div class="t">「그냥 춤을 춰!」 M/V 비하인드</div></div></a>
+    <a href="http://www.xindiemagazine.co.kr/index.php?mid=artists&document_srl=11823" target="_blank"><img src="img/album-christmas.webp" alt=""><div><div class="k">Kindie Magazine</div><div class="t">「짝사랑 크리스마스」 인터뷰</div></div></a>
+    <a href="https://www.genie.co.kr/magazine/subMain?mgz_seq=14429" target="_blank"><img src="img/album-knock.webp" alt=""><div><div class="k">Genie Magazine</div><div class="t">데뷔 싱글 「똑똑똑」 인터뷰</div></div></a>
   </div>
-
-  <div class="example">
-    <div class="h"><span class="pill p-pink">해외 타깃</span> 영어 콘텐츠로 해외 반응을 증명하기</div>
-    <dl>
-      <dt>목표</dt><dd>해외 K-POP 팬에게 'K-POP 전공생 아티스트'로 알려지기</dd>
-      <dt>한 일</dt><dd>영어로 된 일상·전공 브이로그형 숏폼 시리즈 기획 (수업 후 일상, 한국에서 아티스트로 사는 법 등)</dd>
-      <dt>결과</dt><dd>틱톡 편당 1.4천~1.8천 회 · 시청자 중 해외 비율 <span class="fill">○</span>% · 영어 댓글 <span class="fill">○</span>개</dd>
-    </dl>
-  </div>
-
-  <h3>④ 직무별로 강조할 숫자</h3>
-  <table>
-    <tr><th style="width:200px">직무</th><th>앞세울 숫자와 자료</th></tr>
-    <tr><td><span class="pill p-pink">1</span>해외 아티스트·배우</td><td>해외 시청자 비율, 영어 댓글, 뮤직비디오·무대 영상, 외국어로 자기소개하는 30초 영상</td></tr>
-    <tr><td><span class="pill p-blue">2</span>해외 K-POP 교육</td><td>직접 만든 안무 수, 챌린지에 함께한 사람 수, 1만 회 넘은 댄스 커버 3편, 가르쳐 본 경험(인원·횟수)</td></tr>
-    <tr><td><span class="pill p-mint">3</span>한국 제품·서비스 마케팅</td><td>유쓰피릿 브랜드 영상 성과, 크리스마스 싱글 캠페인 결과, 채널 평균 대비 배수, 참여율</td></tr>
-  </table>
-
-  <div class="tip good"><b>숫자가 아직 없다면</b> 오늘부터 유튜브 스튜디오와 틱톡 분석 화면을 한 달에 한 번 캡처해 05_Analytics 폴더에 모아 두세요. 날짜가 찍힌 캡처가 가장 믿을 만한 근거가 됩니다.</div>
 </section>
 
-<!-- ───────── TODO ───────── -->
+<!-- TODO -->
 <section id="todo">
+  <div class="eyebrow">To Do</div>
   <h2>바로 하시면 좋은 일</h2>
-  <div class="card">
-    <ol class="todo">
-      <li>지니·케이인디 인터뷰 3편을 PDF로 저장하기</li>
-      <li>유튜브 스튜디오에서 <b>국가별 시청자 비율</b>과 쇼츠 평균 조회수 확인하기 (위 예시의 노란 칸 채우기)</li>
-      <li>위 작업 카드 6개를 노션이나 PDF로 옮기고, 영문 제목 붙이기</li>
-      <li>유쓰피릿 활동 기간·제작 편수·성과 정리하기</li>
-      <li>영어로 안무를 가르치는 1분 영상 하나 찍어 두기 (교육 직무용)</li>
-      <li>직무별로 순서만 바꾼 한장요약 3개 만들기</li>
-    </ol>
+  <div class="todo">
+    <div>인터뷰 3편 PDF로 저장하기</div>
+    <div>유튜브 스튜디오에서 국가별 시청 비율 확인 → 노란 칸 채우기</div>
+    <div>작업 카드 6장 노션·PDF로 옮기고 영문 제목 붙이기</div>
+    <div>유쓰피릿 활동 기간·편수·성과 정리하기</div>
+    <div>영어로 안무 가르치는 1분 영상 찍어 두기</div>
+    <div>직무별 한장요약 3가지 버전 만들기</div>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    공개된 자료(유튜브 @narimgeum, 틱톡 @narimgeum, 인스타그램 @narimgeum, 지니 매거진·케이인디 매거진 인터뷰)를 바탕으로 2026년 11월 21일에 정리했습니다. 조회수는 정리한 날 기준이며 이후 달라질 수 있습니다.
-  </div>
+  <a href="https://lnkpie.com/@narimgeum" target="_blank">lnkpie.com/@narimgeum</a><br><br>
+  공개 자료(유튜브·틱톡·인스타그램 @narimgeum, 지니·케이인디 인터뷰)를 바탕으로 2026년 11월 21일에 정리했어요.<br>조회수는 정리한 날 기준이에요.
 </footer>
 
 </body>
