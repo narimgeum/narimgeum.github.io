@@ -46,11 +46,42 @@
 
   /* 탭 */
   nav.tabs{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:40px}
-  nav.tabs .wrap{display:flex;justify-content:center;gap:4px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+  nav.tabs .wrap{display:flex;justify-content:safe center;gap:4px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
   nav.tabs a{white-space:nowrap;font-size:14px;font-weight:700;color:#7a3f60;padding:6px 12px;border-radius:999px}
   nav.tabs a:hover{color:var(--pink);background:var(--pink-a)}
+  nav.tabs a.on{color:#160611;background:var(--pink)}
 
-  section{padding:56px 0 8px}
+  section{padding:44px 0 8px}
+  section.panel{display:none;min-height:70vh}
+  section.panel.on{display:block;animation:fadein .35s ease}
+  @keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .pager{display:flex;justify-content:space-between;gap:12px;margin:44px 0 0;padding-top:20px;border-top:1px solid var(--line)}
+  .pager a{display:inline-flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 18px;color:var(--ink);font-weight:700;font-size:15px;cursor:pointer}
+  .pager a small{font-size:11px;color:var(--dim);font-weight:600}
+  .pager a:hover{border-color:var(--pink);color:var(--pink)}
+  .pager .nx{margin-left:auto;text-align:right}
+
+  /* 교육·마케팅 */
+  .chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+  .chip .v{font-size:24px;font-weight:800;color:var(--pink)}
+  .chip .l{font-size:12px;color:var(--sub);margin-top:4px}
+  .vids2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .vids2 .video{margin-top:0}
+  .vcap{font-size:13px;color:var(--sub);margin-top:8px}
+  .vcap b{color:var(--ink)}
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative}
+  .tl{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;color:var(--ink);transition:.2s}
+  .tl:hover{border-color:var(--pink)}
+  .tl .ph{aspect-ratio:1/1;background:#222 center/cover no-repeat;position:relative}
+  .tl .ph .d{position:absolute;left:10px;top:10px;background:var(--pink);color:#160611;font-weight:800;font-size:12px;padding:3px 9px;border-radius:999px}
+  .tl .b{padding:12px 14px;font-size:13px}
+  .tl .b b{display:block;font-size:14px;margin-bottom:2px}
+  .tl .b span{color:var(--pink);font-weight:700}
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .how div{background:linear-gradient(160deg,#25101e,#111114);border:1px solid #3a1730;border-radius:16px;padding:18px;font-size:14px;color:#e3d6de}
+  .how .ic{font-size:26px;margin-bottom:6px}
+  .how b{display:block;color:var(--pink);font-size:15px;margin-bottom:4px}
   .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--pink);text-transform:uppercase;margin-bottom:6px}
   h2{font-size:26px;line-height:1.35;margin:0 0 6px;font-weight:800}
   h3{font-size:18px;margin:34px 0 12px;font-weight:700}
@@ -208,6 +239,8 @@
   <a href="#now">NOW</a>
   <a href="#music">MUSIC</a>
   <a href="#shorts">SHORTS</a>
+  <a href="#edu">K-POP 교육</a>
+  <a href="#mkt">K-마케팅</a>
   <a href="#jobs">희망 직무</a>
   <a href="#q2">Q2 링크 정리</a>
   <a href="#q3">Q3 실무 지표</a>
@@ -217,7 +250,7 @@
 <main class="wrap">
 
 <!-- NOW -->
-<section id="now">
+<section class="panel" id="now">
   <div class="eyebrow">Now</div>
   <h2>지금 나림 님이 가진 숫자</h2>
   <p class="lead">2026년 11월 21일 기준 공개 숫자예요. 포트폴리오 첫 장에 그대로 쓰셔도 돼요.</p>
@@ -230,7 +263,7 @@
 </section>
 
 <!-- MUSIC -->
-<section id="music">
+<section class="panel" id="music">
   <div class="eyebrow">Music</div>
   <h2>싱글 3장, 전부 직접 쓰고 직접 춤췄어요</h2>
   <p class="lead">작사·작곡에 참여하고 안무까지 직접 만든 곡들이에요. 아티스트 직무에서 가장 앞에 둘 자료예요.</p>
@@ -267,7 +300,7 @@
 </section>
 
 <!-- SHORTS -->
-<section id="shorts">
+<section class="panel" id="shorts">
   <div class="eyebrow">Shorts</div>
   <h2>반응이 크게 온 숏폼</h2>
   <p class="lead">'무엇이 터지는지 아는 감각'을 보여주는 증거예요. 옆으로 넘겨 보세요.</p>
@@ -282,8 +315,84 @@
   <div class="scroll-hint">← 옆으로 넘기기 →</div>
 </section>
 
+<!-- EDU -->
+<section class="panel" id="edu">
+  <div class="eyebrow">K-POP Education</div>
+  <h2>직접 만들고, 직접 가르칠 수 있는 사람</h2>
+  <p class="lead">해외 K-POP 교육 직무에서는 "춤을 잘 춘다"보다 <b style="color:var(--pink)">"안무를 만들고 남에게 전달할 수 있다"</b>가 더 중요해요. 나림 님은 이걸 이미 해 봤어요.</p>
+  <div class="chips">
+    <div class="chip"><div class="v">2곡</div><div class="l">직접 만든 안무<br>「똑똑똑」 · 「그냥 춤을 춰!」</div></div>
+    <div class="chip"><div class="v">3편</div><div class="l">친구들과 함께 춘<br>「똑똑똑」 챌린지</div></div>
+    <div class="chip"><div class="v">1만+</div><div class="l">조회수 1만 회 넘은<br>댄스 커버 3편</div></div>
+  </div>
+
+  <h3>내가 만든 안무를 남에게 전달한 기록 · 「똑똑똑」 챌린지</h3>
+  <div class="shorts">
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/OUb2xlavr6E" title="똑똑똑 챌린지 세 명" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>3명이 함께</b>세 명이서 두드리면 파워가 세져요</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/JeZ89_VhgLI" title="똑똑똑 챌린지 듀오" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>듀오 챌린지</b>서로 두드리면 문이 금방 열릴지도</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/02uR4gk2SA4" title="똑똑똑 챌린지 밤" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>포인트 안무</b>밤에 하는 노크는 살살!</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/3CQ-Jp-vehA" title="Like that 커버" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>1.3천 회</b>K-POP과 · Like that</div></div>
+  </div>
+
+  <h3>동아방송예술대학교 K-POP과에서 쌓은 실력</h3>
+  <div class="vids2">
+    <div><div class="video"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/G52SsmO2R2E" title="SMILEY 댄스 보컬 커버" loading="lazy" allowfullscreen></iframe></div><div class="vcap"><b>YENA 「SMILEY」 댄싱 보컬 커버</b> · 춤추면서 라이브 · 1천 회</div></div>
+    <div><div class="video"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/BonCXa_ybVg" title="부석순 커버" loading="lazy" allowfullscreen></iframe></div><div class="vcap"><b>부석순 「파이팅 해야지」 X 「거침없이」 커버</b> · 팀 퍼포먼스 · 696회</div></div>
+  </div>
+
+  <h3>교육 직무 지원 전에 하나씩 더 만들어 두면 좋은 것</h3>
+  <div class="how">
+    <div><div class="ic">🐢</div><b>안무 분해 영상</b>「그냥 춤을 춰!」 후렴을 카운트로 나누고 0.5배속으로 보여주는 1분 영상</div>
+    <div><div class="ic">🌏</div><b>영어 티칭 샘플</b>"Five, six, seven, eight!" 영어로 포인트 안무를 가르치는 1분 영상</div>
+    <div><div class="ic">📋</div><b>수업 기록</b>가르쳐 본 인원·횟수, 수강생 전후 비교 영상이 있으면 가장 강력해요</div>
+  </div>
+</section>
+
+<!-- MKT -->
+<section class="panel" id="mkt">
+  <div class="eyebrow">K-Marketing</div>
+  <h2>한국 브랜드를 알리는 숏폼, 이미 만들어 봤어요</h2>
+  <p class="lead">대기업 브랜드 콘텐츠 제작 경험, 그리고 내 음원을 직접 홍보한 캠페인 경험. 해외 한국 제품·서비스 마케팅 직무에 바로 쓸 수 있는 두 가지예요.</p>
+  <div class="chips">
+    <div class="chip"><div class="v">LG U+</div><div class="l">대학생 앰배서더<br>'유쓰피릿'</div></div>
+    <div class="chip"><div class="v">약 25편</div><div class="l">싱글 하나 홍보에<br>연재한 숏폼</div></div>
+    <div class="chip"><div class="v">3곳</div><div class="l">동시 운영 채널<br>유튜브·틱톡·인스타</div></div>
+  </div>
+
+  <h3>브랜드 콘텐츠 · LG유플러스 '유쓰피릿'</h3>
+  <div class="shorts">
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/G0_Vgxp9sU4" title="갤럭시 S26" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>1.4천 회</b>삼성 갤럭시 S26 출시</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/XfhGMnSTfE0" title="유플러스 체인지 페스타" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>1.4천 회</b>유플러스 체인지 페스타 · BOYNEXTDOOR</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/1jTIGbHv4e0" title="유쓰피릿 대외활동" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>1.4천 회</b>유쓰피릿 활동 소개</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/Qm5GxmrIUOw" title="유쓰 쇼츠 페스티벌" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>1.3천 회</b>동국대 유쓰 쇼츠 페스티벌</div></div>
+    <div class="short"><div class="frame"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/JoP8WraMD18" title="MWC26" loading="lazy" allowfullscreen></iframe></div><div class="cap"><b>657회</b>MWC26</div></div>
+  </div>
+  <div class="scroll-hint">← 옆으로 넘기기 →</div>
+
+  <h3>내 음원 홍보 캠페인 · 「짝사랑 크리스마스」 한 달</h3>
+  <div class="timeline">
+    <a class="tl" href="https://www.youtube.com/shorts/jSUtECNzukw" target="_blank"><div class="ph" style="background-image:url(https://i.ytimg.com/vi/jSUtECNzukw/hqdefault.jpg)"><span class="d">D-20</span></div><div class="b"><b>카운트다운 시작</b>시즌 분위기 띄우기</div></a>
+    <a class="tl" href="https://www.youtube.com/shorts/LEa9sFB3pbc" target="_blank"><div class="ph" style="background-image:url(https://i.ytimg.com/vi/LEa9sFB3pbc/hqdefault.jpg)"><span class="d">작업기</span></div><div class="b"><b>32초 작업기</b>곡 만드는 과정 공개 · <span>439회</span></div></a>
+    <a class="tl" href="https://www.youtube.com/shorts/0NNvVxiGaMY" target="_blank"><div class="ph" style="background-image:url(https://i.ytimg.com/vi/0NNvVxiGaMY/hqdefault.jpg)"><span class="d">한·영</span></div><div class="b"><b>상황극 시리즈</b>영어 자막으로 해외까지 · <span>464회</span></div></a>
+    <a class="tl" href="https://www.youtube.com/watch?v=9XV0OY2_pgo" target="_blank"><div class="ph" style="background-image:url(img/album-christmas.webp)"><span class="d">발매</span></div><div class="b"><b>11.27 발매 · MV</b>케이인디 인터뷰까지 · <span>1.2천 회</span></div></a>
+  </div>
+
+  <h3>정보형 · 해외 타깃 콘텐츠</h3>
+  <div class="vids2">
+    <div class="case"><div class="pic" style="background-image:url(https://i.ytimg.com/vi/zthlODbVakU/hqdefault.jpg)"></div><div class="b"><div class="h">INFO</div><div class="tt">해외전화 무료로 하는 방법</div><div class="vcap" style="margin:0">생활 꿀팁형 정보 숏폼 · <b style="color:var(--pink)">3.1천 회</b><br><a href="https://www.youtube.com/shorts/zthlODbVakU" target="_blank">영상 보기 →</a></div></div></div>
+    <div class="case"><div class="pic" style="background-image:url(https://i.ytimg.com/vi/qBgi-mqfgMc/hqdefault.jpg)"></div><div class="b"><div class="h">TEASER</div><div class="tt">3번째 싱글 D-3 티저</div><div class="vcap" style="margin:0">발매 전 기대감 만들기 · <b style="color:var(--pink)">2.5천 회</b><br><a href="https://www.youtube.com/shorts/qBgi-mqfgMc" target="_blank">영상 보기 →</a></div></div></div>
+  </div>
+
+  <h3>마케팅 면접에서 이렇게 말해 보세요</h3>
+  <div class="how">
+    <div><div class="ic">🏢</div><b>"브랜드 톤에 맞춰 만들어 봤어요"</b>LG유플러스·삼성 갤럭시처럼 브랜드가 정한 메시지를 숏폼 문법으로 바꾼 경험</div>
+    <div><div class="ic">📅</div><b>"캠페인을 처음부터 끝까지"</b>D-20부터 발매까지 한 달 일정을 짜고 콘텐츠를 연재한 경험</div>
+    <div><div class="ic">🌏</div><b>"해외 시청자를 겨냥해 봤어요"</b>한·영 자막, 영어 숏폼 시리즈로 해외 반응을 만든 경험 + 국가별 시청 비율</div>
+  </div>
+</section>
+
 <!-- JOBS -->
-<section id="jobs">
+<section class="panel" id="jobs">
   <div class="eyebrow">Target Jobs</div>
   <h2>희망 직무마다 맨 앞에 둘 자료</h2>
   <p class="lead">자료는 같아도 지원하는 직무에 따라 순서만 바꿔 주세요.</p>
@@ -319,7 +428,7 @@
 </section>
 
 <!-- Q2 -->
-<section id="q2">
+<section class="panel" id="q2">
   <div class="eyebrow">Question 02</div>
   <h2>링크 자료는 이렇게 정리하세요</h2>
   <div class="qbox"><b>Q.</b> 유튜브 영상이나 매거진 인터뷰처럼 링크 형태의 자료들을 폴더에 정리할 때 어떤 방식으로 구성하는 것이 적합할까요?</div>
@@ -389,7 +498,7 @@
 </section>
 
 <!-- Q3 -->
-<section id="q3">
+<section class="panel" id="q3">
   <div class="eyebrow">Question 03</div>
   <h2>작업물을 '실무 역량'으로 보여주는 지표</h2>
   <div class="qbox"><b>Q.</b> 개인적으로 기획하고 제작한 숏폼 콘텐츠나 음악 작업물들을 포트폴리오에 포함시킬 때, 실무 역량으로 어필하기 위해 꼭 포함해야 할 데이터나 지표가 있을까요?</div>
@@ -436,7 +545,7 @@
 </section>
 
 <!-- TODO -->
-<section id="todo">
+<section class="panel" id="todo">
   <div class="eyebrow">To Do</div>
   <h2>바로 하시면 좋은 일</h2>
   <div class="todo">
@@ -455,6 +564,54 @@
   <a href="https://lnkpie.com/@narimgeum" target="_blank">lnkpie.com/@narimgeum</a><br><br>
   공개 자료(유튜브·틱톡·인스타그램 @narimgeum, 지니·케이인디 인터뷰)를 바탕으로 2026년 11월 21일에 정리했어요.<br>조회수는 정리한 날 기준이에요.
 </footer>
+
+<script>
+(function(){
+  var tabs = [].slice.call(document.querySelectorAll('nav.tabs a'));
+  var panels = [].slice.call(document.querySelectorAll('section.panel'));
+  var nav = document.querySelector('nav.tabs');
+  var label = {}; tabs.forEach(function(t){ label[t.getAttribute('href').slice(1)] = t.textContent; });
+
+  // 각 메뉴 아래에 이전·다음 버튼
+  panels.forEach(function(p, i){
+    var box = document.createElement('div'); box.className = 'pager';
+    if (i > 0) box.innerHTML += '<a data-go="'+panels[i-1].id+'"><small>← 이전</small>'+label[panels[i-1].id]+'</a>';
+    if (i < panels.length-1) box.innerHTML += '<a class="nx" data-go="'+panels[i+1].id+'"><small>다음 →</small>'+label[panels[i+1].id]+'</a>';
+    p.appendChild(box);
+  });
+
+  function navTop(){ return document.querySelector('header.profile').getBoundingClientRect().bottom + window.scrollY + 40; }
+
+  function show(id, scroll){
+    if (!document.getElementById(id) || !label[id]) id = panels[0].id;
+    panels.forEach(function(p){
+      var on = p.id === id;
+      if (!on && p.classList.contains('on')) {
+        // 숨기는 메뉴의 영상은 멈춤
+        [].forEach.call(p.querySelectorAll('iframe'), function(f){ f.src = f.src; });
+      }
+      p.classList.toggle('on', on);
+    });
+    tabs.forEach(function(t){ t.classList.toggle('on', t.getAttribute('href') === '#'+id); });
+    if (history.replaceState) history.replaceState(null, '', '#'+id);
+    if (scroll) {
+      var y = navTop();
+      if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' });
+      var a = nav.querySelector('a.on'); var wrap = nav.querySelector('.wrap');
+      if (a && wrap) wrap.scrollTo({ left: a.offsetLeft - wrap.clientWidth/2 + a.offsetWidth/2, behavior: 'smooth' });
+    }
+  }
+
+  tabs.forEach(function(t){ t.addEventListener('click', function(e){ e.preventDefault(); show(t.getAttribute('href').slice(1), true); }); });
+  document.addEventListener('click', function(e){
+    var g = e.target.closest('[data-go]'); if (!g) return;
+    e.preventDefault(); show(g.getAttribute('data-go'), true);
+    window.scrollTo({ top: navTop(), behavior: 'smooth' });
+  });
+  window.addEventListener('hashchange', function(){ show(location.hash.slice(1), true); });
+  show(location.hash.slice(1), false);
+})();
+</script>
 
 </body>
 </html>
