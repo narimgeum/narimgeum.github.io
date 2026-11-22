@@ -399,6 +399,13 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
 .modal .x{position:absolute;top:22px;right:26px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);font-size:24px;display:grid;place-items:center}
 .modal .x:hover{background:var(--pink);color:#17060f}
 
+.lang{display:flex;align-items:center;height:34px;padding:3px;border-radius:999px;border:1px solid var(--line2);background:rgba(255,255,255,.04);margin-left:6px}
+.lang button{height:26px;min-width:34px;padding:0 9px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--sub);transition:.2s}
+.lang button.on{background:var(--pink);color:#17060f}
+.lang button:not(.on):hover{color:#fff}
+html[lang=en] .ko-only{display:none!important}
+html[lang=en] .hero h1{font-size:clamp(32px,4vw,56px);letter-spacing:-.03em}
+
 /* 나타나기 */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -470,14 +477,15 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
     <nav class="gnb" id="gnb" aria-label="주 메뉴">
       <div class="gi" data-g="about"><a href="#about">ABOUT</a><div class="sub"><a href="#about">프로필</a></div></div>
       <div class="gi" data-g="artist"><a href="#music">ARTIST</a><div class="sub"><a href="#music">음악</a><a href="#shorts">숏폼</a></div></div>
-      <div class="gi" data-g="career"><a href="#jobs">CAREER</a><div class="sub"><a href="#jobs">희망 직무</a><a href="#edu">K-POP 교육</a><a href="#mkt">K-마케팅</a></div></div>
-      <div class="gi" data-g="guide"><a href="#q2">GUIDE</a><div class="sub"><a href="#q2">링크 자료 정리</a><a href="#q3">실무 역량 지표</a><a href="#todo">바로 할 일</a></div></div>
+      <div class="gi" data-g="career"><a href="#jobs" id="careerTop">CAREER</a><div class="sub"><a href="#jobs" class="ko-only">희망 직무</a><a href="#edu">K-POP 교육</a><a href="#mkt">K-마케팅</a></div></div>
+      <div class="gi ko-only" data-g="guide"><a href="#q2">GUIDE</a><div class="sub"><a href="#q2">링크 자료 정리</a><a href="#q3">실무 역량 지표</a><a href="#todo">바로 할 일</a></div></div>
     </nav>
     <div class="hact">
       <a class="ico" href="https://www.youtube.com/@narimgeum" target="_blank" aria-label="YouTube"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt=""></a>
       <a class="ico" href="https://www.instagram.com/narimgeum" target="_blank" aria-label="Instagram"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt=""></a>
       <a class="ico" href="https://www.tiktok.com/@narimgeum" target="_blank" aria-label="TikTok"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt=""></a>
       <a class="btn btn-p sm" href="mailto:geumnarim@gmail.com" style="margin-left:8px">CONTACT</a>
+      <div class="lang" id="langsw" role="group" aria-label="Language"><button type="button" data-lang="ko">KO</button><button type="button" data-lang="en">EN</button></div>
       <button class="burger" id="burger" aria-label="메뉴 열기"><i></i></button>
     </div>
   </div>
@@ -488,8 +496,8 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
   <div class="grp"><div class="gt">HOME</div><a href="#home">홈</a></div>
   <div class="grp"><div class="gt">ABOUT</div><a href="#about">프로필</a></div>
   <div class="grp"><div class="gt">ARTIST</div><a href="#music">음악</a><a href="#shorts">숏폼</a></div>
-  <div class="grp"><div class="gt">CAREER</div><a href="#jobs">희망 직무</a><a href="#edu">K-POP 교육</a><a href="#mkt">K-마케팅</a></div>
-  <div class="grp"><div class="gt">GUIDE</div><a href="#q2">링크 자료 정리</a><a href="#q3">실무 역량 지표</a><a href="#todo">바로 할 일</a></div>
+  <div class="grp"><div class="gt">CAREER</div><a href="#jobs" class="ko-only">희망 직무</a><a href="#edu">K-POP 교육</a><a href="#mkt">K-마케팅</a></div>
+  <div class="grp ko-only"><div class="gt">GUIDE</div><a href="#q2">링크 자료 정리</a><a href="#q3">실무 역량 지표</a><a href="#todo">바로 할 일</a></div>
   <div class="mfoot"><a class="btn btn-p sm" href="mailto:geumnarim@gmail.com">CONTACT</a><a class="btn btn-g sm" href="https://lnkpie.com/@narimgeum" target="_blank">Linkpie</a></div>
 </nav>
 
@@ -505,11 +513,11 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
     <div class="ct">
       <div>
         <div class="tag">SINGER-SONGWRITER · PERFORMER</div>
-        <h1>흔들리는 마음 위에서도,<br><em>나만의 리듬</em>으로.</h1>
+        <h1 data-en="Even on shaky days,&lt;br&gt;I keep &lt;em&gt;my own rhythm&lt;/em&gt;.">흔들리는 마음 위에서도,<br><em>나만의 리듬</em>으로.</h1>
         <p>동아방송예술대학교 K-POP과 출신 싱어송라이터 금나림입니다. 곡을 쓰고, 안무를 만들고, 무대와 콘텐츠로 직접 전합니다.</p>
         <div class="cta">
           <button class="btn btn-p" data-yt="5UdC2SaVQg8">▶&nbsp; 최신 뮤직비디오</button>
-          <a class="btn btn-g arrow" href="#q2">포트폴리오 가이드</a>
+          <a class="btn btn-g arrow ko-only" href="#q2">포트폴리오 가이드</a>
         </div>
       </div>
       <div class="fan">
@@ -520,10 +528,10 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
     </div>
     <div class="scrolld"></div>
     <div class="hstats"><div class="ct">
-      <div class="it"><div class="v"><span class="count" data-to="38.9" data-d="1">38.9</span>만</div><div class="l">YouTube 누적 조회수</div></div>
-      <div class="it"><div class="v"><span class="count" data-to="4.67" data-d="2">4.67</span>만</div><div class="l">TikTok 누적 좋아요</div></div>
+      <div class="it"><div class="v" data-en="&lt;span class=&quot;count&quot; data-to=&quot;389&quot;&gt;389&lt;/span&gt;K"><span class="count" data-to="38.9" data-d="1">38.9</span>만</div><div class="l">YouTube 누적 조회수</div></div>
+      <div class="it"><div class="v" data-en="&lt;span class=&quot;count&quot; data-to=&quot;46.7&quot; data-d=&quot;1&quot;&gt;46.7&lt;/span&gt;K"><span class="count" data-to="4.67" data-d="2">4.67</span>만</div><div class="l">TikTok 누적 좋아요</div></div>
       <div class="it"><div class="v"><span class="count" data-to="2529" data-c="1">2,529</span></div><div class="l">Instagram 팔로워</div></div>
-      <div class="it"><div class="v"><span class="count" data-to="3">3</span>장</div><div class="l">자작 싱글 발매</div></div>
+      <div class="it"><div class="v" data-en="&lt;span class=&quot;count&quot; data-to=&quot;3&quot;&gt;3&lt;/span&gt;"><span class="count" data-to="3">3</span>장</div><div class="l">자작 싱글 발매</div></div>
     </div></div>
   </div>
 
@@ -569,7 +577,7 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
     <div class="grid g4 vg4" data-list="home_hot"></div>
   </div></div>
 
-  <div class="sec alt"><div class="ct">
+  <div class="sec alt ko-only"><div class="ct">
     <div class="sh c"><div class="eb">Portfolio Guide</div><h2 class="h2">나림 님의 질문에 답했어요</h2><p class="desc">포트폴리오를 만들며 남겨 주신 질문 두 가지를, 나림 님의 실제 자료로 풀었어요.</p></div>
     <div class="grid g2">
       <a class="card qa hv" href="#q2"><div class="n">Q2</div><div class="eb">링크 자료 정리</div><h3>유튜브·인터뷰 같은 링크 자료는 어떻게 정리할까요?</h3><p>링크를 나열하지 말고 '작업 카드'로. 실제 작업 카드 6장과 폴더 구성까지 정리했어요.</p><span class="more" style="color:var(--pink)">답변 보기</span></a>
@@ -589,7 +597,7 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
       <div class="ph rv"><img src="img/profile.webp" alt="금나림 프로필 사진"><div class="badge"><b>금나림 NARIM</b>Singer-Songwriter &amp; Performer</div></div>
       <div class="rv">
         <div class="eb">Profile</div>
-        <p class="lead">곡을 쓰고, 춤을 만들고,<br>직접 <em>무대와 콘텐츠</em>로 전하는 아티스트</p>
+        <p class="lead" data-en="I write songs, create dance,&lt;br&gt;and share them &lt;em&gt;on stage and on screen&lt;/em&gt;">곡을 쓰고, 춤을 만들고,<br>직접 <em>무대와 콘텐츠</em>로 전하는 아티스트</p>
         <p class="txt">음악과 춤을 함께 배우고 싶어 동아방송예술대학교 K-POP과에 진학했고, 2024년 자작곡 「똑똑똑」으로 데뷔했어요. 지금까지 낸 싱글 세 장 모두 작사·작곡에 참여하고 안무를 직접 만들었어요.</p>
         <p class="txt">유튜브·틱톡·인스타그램을 직접 운영하며 영어 숏폼으로 해외 K-POP 팬을 만나고, LG유플러스 대학생 앰배서더(5월 우수 활동자)와 BOSE 체험단(최우수 체험단)으로 브랜드 콘텐츠도 만들었어요.</p>
         <div class="info">
@@ -606,10 +614,10 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
 
   <div class="sec alt tight"><div class="ct">
     <div class="grid g4">
-      <div class="card kpi rv"><div class="ic">YOUTUBE</div><div class="v"><span class="count" data-to="38.9" data-d="1">38.9</span><small>만</small></div><div class="l">누적 조회수 · 영상 179개 · 구독자 3천</div></div>
-      <div class="card kpi rv"><div class="ic">TIKTOK</div><div class="v"><span class="count" data-to="4.67" data-d="2">4.67</span><small>만</small></div><div class="l">누적 좋아요 · 팔로워 1,180</div></div>
+      <div class="card kpi rv"><div class="ic">YOUTUBE</div><div class="v" data-en="&lt;span class=&quot;count&quot; data-to=&quot;389&quot;&gt;389&lt;/span&gt;&lt;small&gt;K&lt;/small&gt;"><span class="count" data-to="38.9" data-d="1">38.9</span><small>만</small></div><div class="l">누적 조회수 · 영상 179개 · 구독자 3천</div></div>
+      <div class="card kpi rv"><div class="ic">TIKTOK</div><div class="v" data-en="&lt;span class=&quot;count&quot; data-to=&quot;46.7&quot; data-d=&quot;1&quot;&gt;46.7&lt;/span&gt;&lt;small&gt;K&lt;/small&gt;"><span class="count" data-to="4.67" data-d="2">4.67</span><small>만</small></div><div class="l">누적 좋아요 · 팔로워 1,180</div></div>
       <div class="card kpi rv"><div class="ic">INSTAGRAM</div><div class="v"><span class="count" data-to="2529" data-c="1">2,529</span></div><div class="l">팔로워 · @narimgeum</div></div>
-      <div class="card kpi rv"><div class="ic">BEST SHORTS</div><div class="v"><span class="count" data-to="12">12</span><small>만</small></div><div class="l">최고 조회 쇼츠 (BTS 컴백 반응)</div></div>
+      <div class="card kpi rv"><div class="ic">BEST SHORTS</div><div class="v" data-en="&lt;span class=&quot;count&quot; data-to=&quot;120&quot;&gt;120&lt;/span&gt;&lt;small&gt;K&lt;/small&gt;"><span class="count" data-to="12">12</span><small>만</small></div><div class="l">최고 조회 쇼츠 (BTS 컴백 반응)</div></div>
     </div>
   </div></div>
 
@@ -617,7 +625,7 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
     <div class="sh"><div><div class="eb">History</div><h2 class="h2">걸어온 길</h2></div></div>
     <div class="tl">
       <div class="row rv"><div class="y">2026.10<small>BOSE</small></div><div class="ev"><div><b>BOSE QC 헤드폰 2세대 체험단 · 최우수 체험단 선정</b><span>제품 마케팅 영상 기획 · 제작</span></div></div></div>
-      <div class="row rv"><div class="y">2026<small>02 ~ 07</small></div><div class="ev"><div><b>LG유플러스 대학생 앰배서더 '유쓰피릿' · 5월 우수 활동자 선정</b><span>갤럭시 S26 · MWC26 · 유플러스 체인지 페스타 브랜드 숏폼 제작</span></div><img src="https://i.ytimg.com/vi/G0_Vgxp9sU4/hqdefault.jpg" alt=""></div></div>
+      <div class="row rv"><div class="y">2026<small>02 ~ 07</small></div><div class="ev"><div><b>LG유플러스 대학생 앰배서더 '유쓰피릿' · 5월 우수 활동자 선정</b><span>갤럭시 S26 · MWC26 · 유플러스 체인지 페스타 브랜드 숏폼 제작 · 브랜디드 광고 집행 3회</span></div><img src="https://i.ytimg.com/vi/G0_Vgxp9sU4/hqdefault.jpg" alt=""></div></div>
       <div class="row rv"><div class="y">2025.08<small>3rd Single</small></div><div class="ev"><div><b>「그냥 춤을 춰! (Dancin' Like It's Mine)」 발매</b><span>대학교 졸업곡 · 새로운 밴드 사운드 · 지니 매거진 M/V 비하인드 인터뷰</span></div><img src="img/album-dancin.webp" alt=""></div></div>
       <div class="row rv"><div class="y">2024.11<small>2nd Single</small></div><div class="ev"><div><b>「짝사랑 크리스마스 (Knew All About This Christmas)」 발매</b><span>안무 직접 제작 · 발매 전후 한 달간 홍보 숏폼 연재 · 케이인디 매거진 인터뷰</span></div><img src="img/album-christmas.webp" alt=""></div></div>
       <div class="row rv"><div class="y">2024.07<small>Debut</small></div><div class="ev"><div><b>데뷔 싱글 「똑똑똑 (Knock Knock Knock)」 발매</b><span>자작곡 · 하이라이트 안무 직접 제작 · 지니 매거진 데뷔 인터뷰</span></div><img src="img/album-knock.webp" alt=""></div></div>
@@ -652,7 +660,7 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
       <div class="card kpi rv"><div class="ic">OPIc</div><div class="v">AL</div><div class="l">최고 등급 · 영어 말하기</div></div>
       <div class="card kpi rv"><div class="ic">TOEIC</div><div class="v">880</div><div class="l">영어 듣기 · 읽기</div></div>
       <div class="card kpi rv"><div class="ic">TOEFL</div><div class="v">86</div><div class="l">iBT · 영어 4개 영역</div></div>
-      <div class="card kpi rv"><div class="ic">USA</div><div class="v">5<small>개월</small></div><div class="l">Cal State Fullerton 방문학생 · 2025.08–12</div></div>
+      <div class="card kpi rv"><div class="ic">USA</div><div class="v" data-en="5&lt;small&gt; months&lt;/small&gt;">5<small>개월</small></div><div class="l">Cal State Fullerton 방문학생 · 2025.08–12</div></div>
     </div>
     <div class="grid g3">
       <div class="card pad feature hl rv"><div class="ic">🇺🇸</div><h4>미국 현지 무대</h4><p>CSUF 음악학과 Jazz Singers · Small Jazz Group · Deck the Hall 공연, Fullerton Night Owl 'Vocal Night', 교내 라디오 'Titan Radio' 아티스트 게스트</p></div>
@@ -726,7 +734,7 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
     <div class="zz rv">
       <div class="im" style="background-image:url(https://i.ytimg.com/vi/9XV0OY2_pgo/maxresdefault.jpg)"></div>
       <div><div class="rk"><b>3</b>THIRD CHOICE</div><h3>해외 한국 제품 · 서비스 마케팅</h3>
-        <ul class="ck"><li>LG유플러스 '유쓰피릿' 브랜드 숏폼 (5월 우수 활동자 선정)</li><li>BOSE QC 헤드폰 2세대 체험단 영상 (최우수 체험단 선정)</li><li>내 음원 홍보 캠페인 2건 (크리스마스 싱글 연재, D-3 티저)</li><li>정보형 숏폼 (해외전화 꿀팁 3.1천 회)</li><li>유튜브 · 틱톡 · 인스타그램 동시 운영</li><li class="plus">국가별 시청 비율 등 분석 화면 캡처</li></ul>
+        <ul class="ck"><li>LG유플러스 '유쓰피릿' 브랜드 숏폼 (5월 우수 활동자 선정 · 브랜디드 광고 집행 3회)</li><li>BOSE QC 헤드폰 2세대 체험단 영상 (최우수 체험단 선정)</li><li>내 음원 홍보 캠페인 2건 (크리스마스 싱글 연재, D-3 티저)</li><li>정보형 숏폼 (해외전화 꿀팁 3.1천 회)</li><li>유튜브 · 틱톡 · 인스타그램 동시 운영</li><li class="plus">국가별 시청 비율 등 분석 화면 캡처</li></ul>
         <a class="btn btn-g arrow" href="#mkt">K-마케팅 보기</a></div>
     </div>
   </div></div>
@@ -737,9 +745,9 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
   <div class="sec"><div class="ct">
     <div class="sh"><div><div class="eb">Why Narim</div><h2 class="h2">"잘 춘다"보다<br>"만들고 전달할 수 있다"</h2></div><p class="desc" style="max-width:440px">해외 K-POP 교육 직무에서 더 중요한 건 안무를 만들고 남에게 전달하는 능력이에요. 나림 님은 이걸 이미 해 봤어요.</p></div>
     <div class="grid g3">
-      <div class="card kpi rv"><div class="ic">CHOREOGRAPHY</div><div class="v">5<small>곡</small></div><div class="l">직접 만든 안무 · 내 싱글 3곡 + 인디 아이돌 베타 「Atlantis」 「MIRAGE」</div></div>
-      <div class="card kpi rv"><div class="ic">CHALLENGE</div><div class="v">3<small>편+</small></div><div class="l">친구들과 함께 춘 「똑똑똑」 챌린지</div></div>
-      <div class="card kpi rv"><div class="ic">DANCE COVER</div><div class="v">1<small>만+</small></div><div class="l">조회수 1만 회 넘은 댄스 커버 3편</div></div>
+      <div class="card kpi rv"><div class="ic">CHOREOGRAPHY</div><div class="v" data-en="5&lt;small&gt; songs&lt;/small&gt;">5<small>곡</small></div><div class="l">직접 만든 안무 · 내 싱글 3곡 + 인디 아이돌 베타 「Atlantis」 「MIRAGE」</div></div>
+      <div class="card kpi rv"><div class="ic">CHALLENGE</div><div class="v" data-en="3&lt;small&gt;+ videos&lt;/small&gt;">3<small>편+</small></div><div class="l">친구들과 함께 춘 「똑똑똑」 챌린지</div></div>
+      <div class="card kpi rv"><div class="ic">DANCE COVER</div><div class="v" data-en="10&lt;small&gt;K+&lt;/small&gt;">1<small>만+</small></div><div class="l">조회수 1만 회 넘은 댄스 커버 3편</div></div>
     </div>
   </div></div>
 
@@ -770,7 +778,7 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
     <div class="grid g4 vg4" data-list="edu_cover"></div>
   </div></div>
 
-  <div class="sec"><div class="ct">
+  <div class="sec ko-only"><div class="ct">
     <div class="sh"><div><div class="eb">Next Step</div><h2 class="h2">지원 전에 하나씩 더 만들어 두면 좋아요</h2></div></div>
     <div class="grid g3">
       <div class="card pad feature rv"><div class="ic">🐢</div><h4>안무 분해 영상</h4><p>「그냥 춤을 춰!」 후렴을 카운트로 나누고 0.5배속으로 보여주는 1분 영상</p></div>
@@ -785,15 +793,15 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
   <div class="sec"><div class="ct">
     <div class="sh"><div><div class="eb">Why Narim</div><h2 class="h2">한국 브랜드를 알리는 숏폼,<br>이미 만들어 봤어요</h2></div><p class="desc" style="max-width:440px">대기업 브랜드 콘텐츠 제작 경험과 내 음원을 직접 홍보한 캠페인 경험. 해외 한국 제품·서비스 마케팅에 바로 쓸 수 있어요.</p></div>
     <div class="grid g4">
-      <div class="card kpi rv"><div class="ic">BRAND</div><div class="v" style="font-size:40px">LG U+</div><div class="l">대학생 앰배서더 '유쓰피릿' · 5월 우수 활동자 선정</div></div>
+      <div class="card kpi rv"><div class="ic">BRAND</div><div class="v" style="font-size:40px">LG U+</div><div class="l">대학생 앰배서더 '유쓰피릿' · 5월 우수 활동자 선정 · 브랜디드 광고 집행 3회</div></div>
       <div class="card kpi rv"><div class="ic">BRAND</div><div class="v" style="font-size:40px">BOSE</div><div class="l">QC 헤드폰 2세대 체험단 · 최우수 체험단 선정</div></div>
-      <div class="card kpi rv"><div class="ic">CAMPAIGN</div><div class="v">25<small>편</small></div><div class="l">싱글 하나 홍보에 연재한 숏폼 (약)</div></div>
-      <div class="card kpi rv"><div class="ic">CHANNEL</div><div class="v">3<small>곳</small></div><div class="l">유튜브 · 틱톡 · 인스타그램 동시 운영</div></div>
+      <div class="card kpi rv"><div class="ic">CAMPAIGN</div><div class="v" data-en="~25&lt;small&gt; videos&lt;/small&gt;">25<small>편</small></div><div class="l">싱글 하나 홍보에 연재한 숏폼 (약)</div></div>
+      <div class="card kpi rv"><div class="ic">CHANNEL</div><div class="v" data-en="3&lt;small&gt; platforms&lt;/small&gt;">3<small>곳</small></div><div class="l">유튜브 · 틱톡 · 인스타그램 동시 운영</div></div>
     </div>
   </div></div>
 
   <div class="sec alt"><div class="ct">
-    <div class="sh"><div><div class="eb">Brand Content</div><h2 class="h2">LG유플러스 '유쓰피릿'</h2><p class="desc">2026.02 ~ 07 대학생 앰배서더로 활동하며 브랜드가 정한 메시지를 2030이 보는 숏폼 문법으로 바꿨어요. <b style="color:var(--pink)">2026년 5월 우수 활동자</b>로 선정됐어요.</p></div></div>
+    <div class="sh"><div><div class="eb">Brand Content</div><h2 class="h2">LG유플러스 '유쓰피릿'</h2><p class="desc">2026.02 ~ 07 대학생 앰배서더로 활동하며 브랜드가 정한 메시지를 2030이 보는 숏폼 문법으로 바꿨어요. <b style="color:var(--pink)">2026년 5월 우수 활동자</b>로 선정됐고, 브랜디드 광고도 3회 집행했어요.</p></div></div>
     <div class="grid g5" data-list="mkt_brand"></div>
   </div></div>
 
@@ -821,7 +829,7 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
     <div class="grid g4 vg4" data-list="mkt_en"></div>
   </div></div>
 
-  <div class="sec alt"><div class="ct">
+  <div class="sec alt ko-only"><div class="ct">
     <div class="sh"><div><div class="eb">Interview Tip</div><h2 class="h2">마케팅 면접에서 이렇게 말해 보세요</h2></div></div>
     <div class="grid g3">
       <div class="card pad feature rv"><div class="ic">🏢</div><h4>"브랜드 톤에 맞춰 만들어 봤어요"</h4><p>LG유플러스·삼성 갤럭시·BOSE처럼 브랜드가 정한 메시지를 숏폼 문법으로 바꾼 경험. 두 활동 모두 우수·최우수로 선정</p></div>
@@ -964,8 +972,8 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
       </div>
       <div class="col"><h5>ABOUT</h5><a href="#about">프로필</a><a href="https://lnkpie.com/@narimgeum" target="_blank">Linkpie</a></div>
       <div class="col"><h5>ARTIST</h5><a href="#music">음악</a><a href="#shorts">숏폼</a></div>
-      <div class="col"><h5>CAREER</h5><a href="#jobs">희망 직무</a><a href="#edu">K-POP 교육</a><a href="#mkt">K-마케팅</a></div>
-      <div class="col"><h5>GUIDE</h5><a href="#q2">링크 자료 정리</a><a href="#q3">실무 역량 지표</a><a href="#todo">바로 할 일</a></div>
+      <div class="col"><h5>CAREER</h5><a href="#jobs" class="ko-only">희망 직무</a><a href="#edu">K-POP 교육</a><a href="#mkt">K-마케팅</a></div>
+      <div class="col ko-only"><h5>GUIDE</h5><a href="#q2">링크 자료 정리</a><a href="#q3">실무 역량 지표</a><a href="#todo">바로 할 일</a></div>
     </div>
     <div class="bt"><span>© 2026 NARIM. 공개 자료(유튜브·틱톡·인스타그램 @narimgeum, 지니·케이인디 인터뷰)를 바탕으로 2026년 11월 21일에 정리했어요.</span><span>조회수는 정리한 날 기준이에요.</span></div>
   </div>
@@ -976,6 +984,274 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
 
 <script>
 (function(){
+  /* ---------------- 언어 (KO / EN) ---------------- */
+  var EN = {
+"프로필": "Profile",
+"음악": "Music",
+"숏폼": "Short-form",
+"K-POP 교육": "K-POP Education",
+"K-마케팅": "K-Marketing",
+"홈": "Home",
+"주 메뉴": "Main menu",
+"메뉴 열기": "Open menu",
+"모바일 메뉴": "Mobile menu",
+"맨 위로": "Back to top",
+"닫기": "Close",
+"뮤직비디오 재생": "Play music video",
+"금나림 프로필 사진": "Profile photo of Narim Geum",
+"그냥 춤을 춰! 앨범 커버": "Dancin' Like It's Mine album cover",
+"동아방송예술대학교 K-POP과 출신 싱어송라이터 금나림입니다. 곡을 쓰고, 안무를 만들고, 무대와 콘텐츠로 직접 전합니다.": "I'm NARIM (Narim Geum), a singer-songwriter trained in the K-POP department at Dong-ah Institute of Media and Arts. I write songs, create choreography, and share them myself on stage and through content.",
+"▶  최신 뮤직비디오": "▶  Latest music video",
+"YouTube 누적 조회수": "YouTube total views",
+"TikTok 누적 좋아요": "TikTok total likes",
+"Instagram 팔로워": "Instagram followers",
+"자작 싱글 발매": "Original singles released",
+"금나림": "Narim Geum",
+"노래하고, 가르치고,": "I sing, I teach,",
+"알리는 사람": "and I promote",
+"희망 직무 세 가지와 연결되는 나림 님의 활동이에요. 카드를 누르면 자세히 볼 수 있어요.": "Three sides of my work. Click a card to see more.",
+"아티스트 · 배우": "Artist · Actor",
+"작사·작곡·안무까지 직접 만든 싱글 3장과 뮤직비디오": "Three singles and music videos, with lyrics, music and choreography by me",
+"음악 보기": "See my music",
+"직접 만든 안무를 남에게 전달해 본 챌린지와 학과 퍼포먼스": "Teaching my own choreography through dance challenges and department performances",
+"교육 역량 보기": "See my teaching",
+"LG유플러스 앰배서더 · BOSE 체험단 브랜드 숏폼과 내 음원 홍보 캠페인": "Brand short-form for LG U+ and BOSE, plus campaigns for my own releases",
+"마케팅 역량 보기": "See my marketing",
+"작사": "Lyrics",
+"작곡": "Music",
+"편곡": "Arrangement",
+"안무": "Choreography",
+"금나림, 김다연": "Narim Geum, Dayeon Kim",
+"권시온, SeVin": "Sion Kwon, SeVin",
+"\"평범한 순간에는 활력을, 우울한 순간에는 위로를, 행복한 순간에는 보너스를 드릴 수 있다면 좋겠어요.\"": "\"I hope my music brings energy to ordinary moments, comfort to the blue ones, and a little bonus to the happy ones.\"",
+"— 지니 매거진 인터뷰 중": "— from an interview with Genie Magazine",
+"전체 디스코그래피": "Full discography",
+"반응이 크게 온 숏폼": "Most-watched short-form",
+"숏폼 전체 보기": "See all short-form",
+"함께 작업하고 싶으신가요?": "Let's work together",
+"공연 · 교육 · 브랜드 콘텐츠 협업 문의를 기다려요.": "Open to performances, teaching and brand content collaborations.",
+"금나림 NARIM": "NARIM · Narim Geum",
+"음악과 춤을 함께 배우고 싶어 동아방송예술대학교 K-POP과에 진학했고, 2024년 자작곡 「똑똑똑」으로 데뷔했어요. 지금까지 낸 싱글 세 장 모두 작사·작곡에 참여하고 안무를 직접 만들었어요.": "I joined the K-POP department at Dong-ah Institute of Media and Arts to study music and dance together, and debuted in 2024 with my original song “Knock Knock Knock.” I co-wrote the lyrics and music and created the choreography for all three of my singles.",
+"유튜브·틱톡·인스타그램을 직접 운영하며 영어 숏폼으로 해외 K-POP 팬을 만나고, LG유플러스 대학생 앰배서더(5월 우수 활동자)와 BOSE 체험단(최우수 체험단)으로 브랜드 콘텐츠도 만들었어요.": "I run my own YouTube, TikTok and Instagram channels and reach global K-POP fans with English short-form videos. I've also made brand content as an LG U+ campus ambassador (Outstanding Ambassador, May 2026) and a BOSE product reviewer (Top Reviewer).",
+"활동명": "Stage name",
+"금나림 (NARIM)": "NARIM (Narim Geum)",
+"포지션": "Roles",
+"싱어송라이터 · 퍼포머 · 콘텐츠 크리에이터": "Singer-songwriter · Performer · Content creator",
+"학력": "Education",
+"동아방송예술대학교 K-POP학과 (2027.02 졸업 예정)": "Dong-ah Institute of Media and Arts, Dept. of K-POP (graduating Feb 2027)",
+"장르": "Genres",
+"발라드 · R&B · 댄스 · 밴드 팝": "Ballad · R&B · Dance · Band pop",
+"언어": "Languages",
+"한국어, 영어 (OPIc AL · TOEIC 880 · TOEFL 86)": "Korean (native), English (OPIc AL · TOEIC 880 · TOEFL 86)",
+"연락처": "Contact",
+"누적 조회수 · 영상 179개 · 구독자 3천": "Total views · 179 videos · 3K subscribers",
+"누적 좋아요 · 팔로워 1,180": "Total likes · 1,180 followers",
+"팔로워 · @narimgeum": "Followers · @narimgeum",
+"최고 조회 쇼츠 (BTS 컴백 반응)": "Top Short (reacting to the BTS comeback)",
+"걸어온 길": "My journey",
+"BOSE QC 헤드폰 2세대 체험단 · 최우수 체험단 선정": "BOSE QC Headphones (2nd Gen) reviewer · named Top Reviewer",
+"제품 마케팅 영상 기획 · 제작": "Planned and produced product marketing videos",
+"LG유플러스 대학생 앰배서더 '유쓰피릿' · 5월 우수 활동자 선정": "LG U+ campus ambassador 'Youthpirit' · Outstanding Ambassador for May",
+"갤럭시 S26 · MWC26 · 유플러스 체인지 페스타 브랜드 숏폼 제작 · 브랜디드 광고 집행 3회": "Brand short-form for Galaxy S26, MWC26 and U+ Change Festa · 3 branded ads run",
+"「그냥 춤을 춰! (Dancin' Like It's Mine)」 발매": "Released “Dancin' Like It's Mine” (그냥 춤을 춰!)",
+"대학교 졸업곡 · 새로운 밴드 사운드 · 지니 매거진 M/V 비하인드 인터뷰": "My graduation song · a new band sound · Genie Magazine M/V behind-the-scenes interview",
+"「짝사랑 크리스마스 (Knew All About This Christmas)」 발매": "Released “Knew All About This Christmas” (짝사랑 크리스마스)",
+"안무 직접 제작 · 발매 전후 한 달간 홍보 숏폼 연재 · 케이인디 매거진 인터뷰": "My own choreography · a month-long short-form promo series · Kindie Magazine interview",
+"데뷔 싱글 「똑똑똑 (Knock Knock Knock)」 발매": "Debut single “Knock Knock Knock” (똑똑똑)",
+"자작곡 · 하이라이트 안무 직접 제작 · 지니 매거진 데뷔 인터뷰": "Original song · my own highlight choreography · Genie Magazine debut interview",
+"K-POP과": "K-POP Dept.",
+"동아방송예술대학교": "Dong-ah Institute of Media and Arts",
+"동아방송예술대학교 K-POP과 진학": "Joined the K-POP department at Dong-ah Institute of Media and Arts",
+"음악과 춤을 함께 배우며 댄싱 보컬 · 팀 퍼포먼스 커버 제작": "Studying music and dance together · dancing-vocal and team performance covers",
+"~ 2027.02 졸업 예정": "~ Feb 2027 (expected graduation)",
+"동아방송예술대학교 K-POP학과": "Dong-ah Institute of Media and Arts · Dept. of K-POP",
+"K-POP학과 수석 입학 (2026.03)": "Admitted with the top entrance score (Mar 2026)",
+"~ 2025.12 · 방문학생": "~ Dec 2025 · Visiting student",
+"California State University, Fullerton (미국)": "California State University, Fullerton (USA)",
+"음악학과 Jazz Singers · Small Jazz Group · Deck the Hall 공연, Tusk Magazine 2025 모델": "Performed with the Music Department's Jazz Singers, Small Jazz Group and Deck the Hall · model for Tusk Magazine 2025",
+"동아방송예술대학교 K-POP과": "Dong-ah Institute of Media and Arts · Dept. of K-POP",
+"K-POP과 장학생 (2022.09–2023.08, 2024.09–2026.02)": "Scholarship student (2022.09–2023.08, 2024.09–2026.02)",
+"할 수 있는 일": "What I do",
+"보컬 · 라이브": "Vocals · Live",
+"발라드부터 댄스곡까지, 춤추면서 부르는 댄싱 보컬": "From ballads to dance tracks, singing live while dancing",
+"작사 · 작곡": "Songwriting",
+"싱글 3장 모두 작사·작곡 참여, 편곡자와 협업": "Co-wrote lyrics and music for all three singles, working with arrangers",
+"안무 제작": "Choreography",
+"내 싱글 「똑똑똑」 「짝사랑 크리스마스」 「그냥 춤을 춰!」, 인디 아이돌 베타 「Atlantis」 「MIRAGE」까지 5곡": "5 songs: my singles “Knock Knock Knock,” “Knew All About This Christmas” and “Dancin' Like It's Mine,” plus “Atlantis” and “MIRAGE” for indie idol group BE++ER!!",
+"숏폼 기획 · 편집": "Short-form planning · editing",
+"기획·촬영·편집·자막까지 혼자, 영상 160편 이상": "Planning, filming, editing and subtitles on my own, 160+ videos",
+"영어 콘텐츠": "English content",
+"영어 숏폼 시리즈와 한·영 자막으로 해외 시청자 소통": "An English short-form series and Korean/English subtitles for global viewers",
+"캠페인 운영": "Campaigns",
+"발매 일정에 맞춘 티저·카운트다운·연재 콘텐츠 운영": "Teasers, countdowns and content series timed to each release",
+"영어로 무대에 서고,": "I perform in English,",
+"영어로 가르쳐요": "and I teach in English",
+"미국 캘리포니아 주립대 방문학생으로 한 학기를 보내며 현지 무대에 섰고, 지금은 영어로 아이들에게 춤을 가르치고 있어요.": "I spent a semester as a visiting student at California State University, Fullerton, performing on local stages, and I now teach dance to children in English.",
+"최고 등급 · 영어 말하기": "Highest level · English speaking",
+"영어 듣기 · 읽기": "English listening · reading",
+"iBT · 영어 4개 영역": "iBT · all four skills",
+"Cal State Fullerton 방문학생 · 2025.08–12": "Visiting student at Cal State Fullerton · Aug–Dec 2025",
+"미국 현지 무대": "Performing in the US",
+"CSUF 음악학과 Jazz Singers · Small Jazz Group · Deck the Hall 공연, Fullerton Night Owl 'Vocal Night', 교내 라디오 'Titan Radio' 아티스트 게스트": "CSUF Music Department concerts (Jazz Singers, Small Jazz Group, Deck the Hall), 'Vocal Night' at Night Owl in Fullerton, and artist guest on campus radio 'Titan Radio'",
+"영어로 가르치는 댄스 수업": "Teaching dance in English",
+"스프링키즈 영어 댄스 트레이너 (2026.03~) · 성남 동산 어린이집에서 아이들에게 영어로 춤을 가르쳐요": "English dance trainer at Spring Kids (since Mar 2026), teaching children dance in English at Dongsan Daycare Center in Seongnam",
+"영어 숏폼 시리즈 'Life as a K-pop music major', 한·영 자막으로 해외 시청자와 소통": "My English short-form series 'Life as a K-pop music major' and Korean/English subtitles for global viewers",
+"인터뷰": "Interview",
+"「그냥 춤을 춰!」 M/V 촬영 비하인드": "“Dancin' Like It's Mine” M/V behind the scenes",
+"「짝사랑 크리스마스」 인터뷰": "“Knew All About This Christmas” interview",
+"데뷔 싱글 「똑똑똑」 발매 인터뷰": "Debut single “Knock Knock Knock” interview",
+"싱글 3장, 전부 직접 쓰고 직접 췄어요": "Three singles, all written and danced by me",
+"메이킹 · 비하인드": "Making · Behind the scenes",
+"뮤직비디오 소품 아이디어까지 직접 낸, 곡 뒤의 과정이에요.": "The process behind each song, down to the music video props I came up with.",
+"보컬 커버": "Vocal covers",
+"숏폼 아카이브": "Short-form archive",
+"유튜브 쇼츠 164편 가운데 대표작을 골랐어요. 종류별로 골라 보세요.": "Highlights from my 164 YouTube Shorts. Filter by type.",
+"전체": "All",
+"인기": "Popular",
+"댄스": "Dance",
+"보컬": "Vocal",
+"브랜드 · 정보": "Brand · Info",
+"내 음악": "My music",
+"\"잘 춘다\"보다": "Not just \"a good dancer\"",
+"\"만들고 전달할 수 있다\"": "but \"someone who can create and teach\"",
+"해외 K-POP 교육 직무에서 더 중요한 건 안무를 만들고 남에게 전달하는 능력이에요. 나림 님은 이걸 이미 해 봤어요.": "What matters most in K-POP education is being able to create choreography and pass it on to others, and I've already done both.",
+"직접 만든 안무 · 내 싱글 3곡 + 인디 아이돌 베타 「Atlantis」 「MIRAGE」": "Original choreography · my 3 singles + “Atlantis” and “MIRAGE” for BE++ER!!",
+"친구들과 함께 춘 「똑똑똑」 챌린지": "“Knock Knock Knock” challenges danced with friends",
+"조회수 1만 회 넘은 댄스 커버 3편": "Three dance covers with 10K+ views",
+"어린이부터 아이돌까지,": "From kids to idols,",
+"직접 가르쳐 왔어요": "I've taught them all",
+"어린이집·초등학교·국제학교·댄스 학원, 인디 아이돌 트레이닝까지. 2023년부터 꾸준히 댄스 강사로 활동하고 있어요.": "Daycare centers, an elementary school, an international school, dance academies and indie idol training. I've been teaching dance steadily since 2023.",
+"~ 현재": "~ Present",
+"스프링키즈 · 성남 동산 어린이집": "Spring Kids · Dongsan Daycare Center, Seongnam",
+"영어 댄스 트레이너": "English dance trainer",
+"대교에듀캠프 · 고삼 초등학교": "Daekyo EduCamp · Gosam Elementary School",
+"댄스 트레이너": "Dance trainer",
+"국제학교 BC Collegiate": "BC Collegiate (international school)",
+"댄스 트레이너 (대강)": "Dance trainer (substitute)",
+"2024.08 · 2025.02 두 차례": "Twice: Aug 2024 · Feb 2025",
+"인디 아이돌 BE++ER!!(베타)": "Indie idol group BE++ER!!",
+"「Atlantis」 「MIRAGE」 안무 제작 · 멤버 댄스 트레이닝": "Created choreography for “Atlantis” and “MIRAGE” · trained the members",
+"뮤직 온셋 (Music-onset)": "Music-onset",
+"축무 · 댄스 트레이너": "Celebration dance performer · Dance trainer",
+"2주": "2 weeks",
+"미디시티 동탄점": "Midicity Dongtan",
+"이지 댄스 스튜디오 (EZ Dance Studio)": "EZ Dance Studio",
+"댄스 트레이너 (방학 특강)": "Dance trainer (vacation workshop)",
+"1일 특강": "One-day workshop",
+"동아방송예술대학교 2023 또래스토리": "Dong-ah Institute of Media and Arts · 2023 Ttorae Story",
+"내 안무를 남에게 전달한 기록": "Passing my choreography on",
+"「똑똑똑」 포인트 안무를 친구들과 함께 춘 챌린지 영상이에요.": "Challenge videos of the “Knock Knock Knock” point choreography, danced with friends.",
+"동아방송예대 K-POP과에서 쌓은 실력": "Skills from the K-POP department",
+"한국 브랜드를 알리는 숏폼,": "Short-form that promotes Korean brands:",
+"이미 만들어 봤어요": "I've already made it",
+"대기업 브랜드 콘텐츠 제작 경험과 내 음원을 직접 홍보한 캠페인 경험. 해외 한국 제품·서비스 마케팅에 바로 쓸 수 있어요.": "Experience making content for major brands and running campaigns for my own music, ready to put to work marketing Korean products and services worldwide.",
+"대학생 앰배서더 '유쓰피릿' · 5월 우수 활동자 선정 · 브랜디드 광고 집행 3회": "Campus ambassador 'Youthpirit' · Outstanding Ambassador, May 2026 · 3 branded ads run",
+"QC 헤드폰 2세대 체험단 · 최우수 체험단 선정": "QC Headphones (2nd Gen) reviewer · Top Reviewer",
+"싱글 하나 홍보에 연재한 숏폼 (약)": "Short-form videos to promote one single (approx.)",
+"유튜브 · 틱톡 · 인스타그램 동시 운영": "Running YouTube, TikTok and Instagram at once",
+"LG유플러스 '유쓰피릿'": "LG U+ 'Youthpirit'",
+"2026.02 ~ 07 대학생 앰배서더로 활동하며 브랜드가 정한 메시지를 2030이 보는 숏폼 문법으로 바꿨어요.": "As a campus ambassador (Feb–Jul 2026), I turned brand messages into short-form content for people in their 20s and 30s.",
+"2026년 5월 우수 활동자": "I was named Outstanding Ambassador for May 2026",
+"로 선정됐어요.": ".",
+"로 선정됐고, 브랜디드 광고도 3회 집행했어요.": ", and I ran 3 branded ads during the program.",
+"BOSE QC 헤드폰 2세대 체험단": "BOSE QC Headphones (2nd Gen) reviewer program",
+"2026년 10월, 제품을 직접 써 보고 마케팅 영상을 기획 · 제작했어요. 체험단 중": "In October 2026, I tried the product myself and planned and produced marketing videos. Among all reviewers, I was",
+"최우수 체험단": "selected as Top Reviewer",
+"으로 선정됐어요.": ".",
+"제품": "Product",
+"BOSE QuietComfort(QC) 헤드폰 2세대": "BOSE QuietComfort (QC) Headphones, 2nd Gen",
+"맡은 일": "My role",
+"제품 체험 마케팅 영상 기획 · 제작": "Planned and produced hands-on product marketing videos",
+"결과": "Result",
+"최우수 체험단 선정 (2026.10)": "Selected as Top Reviewer (Oct 2026)",
+"내 음원 홍보 캠페인 · 한 달": "A one-month campaign for my own single",
+"「짝사랑 크리스마스」 발매 전 D-20부터 발매일까지 콘텐츠를 연재했어요.": "For “Knew All About This Christmas,” I ran a content series from D-20 to release day.",
+"카운트다운 시작": "Countdown begins",
+"시즌 분위기 띄우기": "Setting the holiday mood",
+"작업": "Studio",
+"32초 작업기": "32-second studio log",
+"곡 만드는 과정 공개 ·": "Showing how the song was made ·",
+"439회": "439 views",
+"한·영": "KR·EN",
+"상황극 시리즈": "Skit series",
+"영어 자막으로 해외까지 ·": "Reaching overseas with English subtitles ·",
+"464회": "464 views",
+"발매": "Release",
+"11.27 발매 · MV": "Released Nov 27 · MV",
+"케이인디 인터뷰까지 ·": "Plus a Kindie Magazine interview ·",
+"1.2천 회": "1.2K views",
+"해외 시청자를 겨냥한 영어 숏폼": "English short-form for global viewers",
+"© 2026 NARIM. 공개 자료(유튜브·틱톡·인스타그램 @narimgeum, 지니·케이인디 인터뷰)를 바탕으로 2026년 11월 21일에 정리했어요.": "© 2026 NARIM. Compiled on November 21, 2026 from public sources (YouTube, TikTok and Instagram @narimgeum; Genie and Kindie interviews).",
+"조회수는 정리한 날 기준이에요.": "View counts are as of that date.",
+"BTS 컴백 당일 반응": "Reacting to BTS's comeback day",
+"소중한 건 지금이야": "What matters is now",
+"aespa 「Supernova」 커버": "aespa “Supernova” cover",
+"ILLIT 「Magnetic」 커버": "ILLIT “Magnetic” cover",
+"「그냥 춤을 춰!」 Making": "“Dancin' Like It's Mine” Making",
+"「짝사랑 크리스마스」 Behind": "“Knew All About This Christmas” Behind",
+"「똑똑똑」 MV & Photo Behind": "“Knock Knock Knock” MV & Photo Behind",
+"「짝사랑 크리스마스」 Teaser": "“Knew All About This Christmas” Teaser",
+"우효 「민들레」": "OOHYO “Dandelion”",
+"아이유 「스물셋」": "IU “Twenty-three”",
+"악뮤 「200%」": "AKMU “200%”",
+"aespa 「Thirsty」": "aespa “Thirsty”",
+"세 명이서 「똑똑똑」 챌린지": "“Knock Knock Knock” challenge (trio)",
+"「똑똑똑」 포인트 안무": "“Knock Knock Knock” point choreography",
+"듀오 「똑똑똑」 챌린지": "“Knock Knock Knock” challenge (duo)",
+"「똑똑똑」 문 열어바": "“Knock Knock Knock”: open the door",
+"YENA 「SMILEY」 댄싱 보컬 커버": "YENA “SMILEY” dancing-vocal cover",
+"부석순 「파이팅 해야지」 X 「거침없이」 팀 퍼포먼스": "BSS “Fighting” × “Just Do It” team performance",
+"aespa 「Supernova」": "aespa “Supernova”",
+"ILLIT 「Magnetic」": "ILLIT “Magnetic”",
+"K-POP과 · 「Antifragile」": "K-POP Dept. · “Antifragile”",
+"K-POP과 · 「Like that」": "K-POP Dept. · “Like that”",
+"삼성 갤럭시 S26": "Samsung Galaxy S26",
+"유플러스 체인지 페스타": "U+ Change Festa",
+"유쓰피릿 활동 소개": "About Youthpirit",
+"유쓰 쇼츠 페스티벌": "Youth Shorts Festival",
+"K-POP 댄스 챌린지": "K-POP dance challenge",
+"NewJeans 「Hype Boy」 커버": "NewJeans “Hype Boy” cover",
+"나연 「ABCD」 커버": "NAYEON “ABCD” cover",
+"해외전화 무료로 하는 방법": "How to make free international calls",
+"「404」 댄스": "“404” dance",
+"KATSEYE 「Animal」 커버": "KATSEYE “Animal” cover",
+"3rd Single D-3 티저": "3rd Single D-3 teaser",
+"우효 「민들레」 보컬 커버": "OOHYO “Dandelion” vocal cover",
+"아이유 「스물셋」 보컬 커버": "IU “Twenty-three” vocal cover",
+"유쓰피릿 · 갤럭시 S26": "Youthpirit · Galaxy S26",
+"유쓰피릿 · 체인지 페스타": "Youthpirit · Change Festa",
+"악뮤 「200%」 보컬 커버": "AKMU “200%” vocal cover",
+"aespa 「Thirsty」 보컬 커버": "aespa “Thirsty” vocal cover",
+"「짝사랑 크리스마스」 32초 작업기": "“Knew All About This Christmas” 32-second studio log",
+"「똑똑똑」 챌린지": "“Knock Knock Knock” challenge",
+"졸업곡": "Graduation song",
+"자작곡": "Original song",
+"홍보": "Promotion",
+"숏폼 약 25편 기획 · 연재": "Planned and posted ~25 short-form videos",
+"금나림 (하이라이트)": "Narim Geum (highlight)",
+"듣기": "Listen",
+"불안과 두려움에 빠져 있던 나를 마주하며 쓴 곡. 청량한 밴드 사운드에 직접 만든 안무를 담았고, 뮤직비디오의 노란 마이크도 나림 님 아이디어예요.": "A song I wrote while facing my own anxiety and fear. It pairs a fresh band sound with my own choreography, and the yellow microphone in the music video was my idea.",
+"혼자 하는 사랑이 더 쓸쓸한 크리스마스 시즌 싱글. 발매 전 D-20부터 상황극·작업기·티저 숏폼을 한·영 자막으로 연재했어요.": "A holiday single about how much lonelier a one-sided crush feels at Christmas. Starting at D-20, I posted skits, studio logs and teasers with Korean/English subtitles.",
+"\"첫 곡은 사랑 노래로 하지 않겠다\"던 중학생 때의 다짐을 지킨 데뷔곡. 발랄한 무드에 직접 만든 하이라이트 안무로 챌린지까지 이어졌어요.": "My debut keeps a promise I made in middle school: \"My first song won't be a love song.\" Its bright mood and my highlight choreography grew into a dance challenge.",
+"곡을 쓰고, 춤을 만들고, 무대와 콘텐츠로 전하는 아티스트 금나림을 소개해요.": "Meet NARIM, an artist who writes songs, creates dance, and brings them to the stage and the screen.",
+"작사·작곡·안무까지 직접 만든 싱글 3장과 뮤직비디오.": "Three singles and music videos, with lyrics, music and choreography by me.",
+"유튜브 누적 조회수 38.9만. 반응이 컸던 숏폼을 종류별로 모았어요.": "389K total YouTube views. My most popular short-form videos, by type.",
+"안무를 만들고, 남에게 전달해 본 경험.": "Creating choreography and teaching it to others.",
+"한국 브랜드 숏폼과 내 음원 홍보 캠페인.": "Short-form for Korean brands and campaigns for my own music."
+};
+  var LANG = 'ko';
+  try { var qs = /[?&]lang=(en|ko)\b/.exec(location.search); LANG = qs ? qs[1] : (localStorage.getItem('narim-lang') || 'ko'); } catch(e){}
+  if (LANG !== 'en') LANG = 'ko';
+  function isEn(){ return LANG === 'en'; }
+  function T(s){ return isEn() && Object.prototype.hasOwnProperty.call(EN, s) ? EN[s] : s; }
+  function VW(s){
+    if (!isEn()) return s;
+    var m = /^([\d.]+)\s*(만|천)$/.exec(s); if (!m) return s;
+    var n = parseFloat(m[1]) * (m[2] === '만' ? 10 : 1);
+    return (Math.round(n*10)/10) + 'K';
+  }
+  function VIEWS(s){ return isEn() ? VW(s) + ' views' : '조회수 ' + s + '회'; }
+
   /* ---------------- 데이터 ---------------- */
   var V = {
     home_hot:[['TWaiqgXMZzk','BTS 컴백 당일 반응','12만',1],['fkjR0erx32I','소중한 건 지금이야','2.9만',1],['bfiRP7va-Do','aespa 「Supernova」 커버','1.3만',1],['djuhMbkki1w','ILLIT 「Magnetic」 커버','1.2만',1]],
@@ -1044,12 +1320,16 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
   function vcard(a){
     var vert = !!a[3];
-    return '<div class="vc rv"><button class="vt'+(vert?' v':'')+'" data-yt="'+a[0]+'"'+(vert?' data-v="1"':'')+' aria-label="'+esc(a[1])+' 재생"><span class="pl"></span><span class="vw">'+a[2]+'</span></button>'+
-      '<div class="mt"><div class="t">'+esc(a[1])+'</div><div class="s">조회수 '+a[2]+'회</div></div></div>';
+    var t = T(a[1]);
+    return '<div class="vc rv"><button class="vt'+(vert?' v':'')+'" data-yt="'+a[0]+'"'+(vert?' data-v="1"':'')+' aria-label="'+(isEn()?'Play '+esc(t):esc(t)+' 재생')+'"><span class="pl"></span><span class="vw">'+VW(a[2])+'</span></button>'+
+      '<div class="mt"><div class="t">'+esc(t)+'</div><div class="s">'+VIEWS(a[2])+'</div></div></div>';
   }
-  [].forEach.call(document.querySelectorAll('[data-list]'), function(el){
-    el.innerHTML = V[el.getAttribute('data-list')].map(vcard).join('');
-  });
+  function renderLists(){
+    [].forEach.call(document.querySelectorAll('[data-list]'), function(el){
+      el.innerHTML = V[el.getAttribute('data-list')].map(vcard).join('');
+    });
+  }
+  renderLists();
 
   // 작업 카드
   document.getElementById('wcards').innerHTML = WORKS.map(function(w){
@@ -1061,11 +1341,12 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
   }).join('');
 
   // 숏폼 필터
-  var sgrid = document.getElementById('sgrid'), fcnt = document.getElementById('fcnt');
+  var sgrid = document.getElementById('sgrid'), fcnt = document.getElementById('fcnt'), curF = 'all';
   function drawShorts(f){
+    curF = f;
     var list = SHORTS.filter(function(s){ return f==='all' || (' '+s[3]+' ').indexOf(' '+f+' ')>-1; });
     sgrid.innerHTML = list.map(function(s){ return vcard([s[0],s[1],s[2],1]); }).join('');
-    fcnt.textContent = list.length+'편';
+    fcnt.textContent = list.length + (isEn() ? ' videos' : '편');
     setThumbs(sgrid); observe(sgrid);
   }
   document.getElementById('filters').addEventListener('click', function(e){
@@ -1076,17 +1357,22 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
 
   // 디스코그래피
   var alist = document.getElementById('alist'), dinfo = document.getElementById('dinfo'), dvid = document.getElementById('dvid');
-  alist.innerHTML = ALBUMS.map(function(a,i){ return '<button data-i="'+i+'"><img src="'+a.img+'" alt=""><span>'+a.t+'<small>'+a.d+'</small></span></button>'; }).join('');
+  var curA = 0;
+  function renderAlbums(){
+    alist.innerHTML = ALBUMS.map(function(a,i){ return '<button data-i="'+i+'"><img src="'+a.img+'" alt=""><span>'+a.t+'<small>'+a.d+'</small></span></button>'; }).join('');
+  }
+  renderAlbums();
   function pickAlbum(i){
+    curA = i;
     var a = ALBUMS[i];
     [].forEach.call(alist.children, function(b,j){ b.classList.toggle('on', j===i); });
     dvid.setAttribute('data-yt', a.yt);
     dvid.style.backgroundImage = 'url(https://i.ytimg.com/vi/'+a.yt+'/maxresdefault.jpg)';
-    dinfo.innerHTML = '<div class="kind">'+a.k.map(function(k,j){return '<span class="chip'+(j?' g':'')+'">'+k+'</span>';}).join('')+'</div>'+
-      '<h3>'+a.t+'</h3><div class="en">'+a.en+' · '+a.d+'</div><p class="note">'+a.note+'</p>'+
-      '<div class="credit">'+a.cr.map(function(c){return '<div><span class="k">'+c[0]+'</span><span>'+c[1]+'</span></div>';}).join('')+
-      '<div><span class="k">MV</span><span class="pk" style="font-weight:800">조회수 '+a.v+'회</span></div></div>'+
-      '<div class="stream"><button class="btn btn-p sm" data-yt="'+a.yt+'">▶ 뮤직비디오</button>'+a.l.map(function(x){return '<a class="btn btn-g sm" href="'+x[1]+'" target="_blank">'+x[0]+' ↗</a>';}).join('')+'</div>';
+    dinfo.innerHTML = '<div class="kind">'+a.k.map(function(k,j){return '<span class="chip'+(j?' g':'')+'">'+T(k)+'</span>';}).join('')+'</div>'+
+      '<h3>'+a.t+'</h3><div class="en">'+a.en+' · '+a.d+'</div><p class="note">'+T(a.note)+'</p>'+
+      '<div class="credit">'+a.cr.map(function(c){return '<div><span class="k">'+T(c[0])+'</span><span>'+T(c[1])+'</span></div>';}).join('')+
+      '<div><span class="k">MV</span><span class="pk" style="font-weight:800">'+VIEWS(a.v)+'</span></div></div>'+
+      '<div class="stream"><button class="btn btn-p sm" data-yt="'+a.yt+'">▶ '+(isEn()?'Music video':'뮤직비디오')+'</button>'+a.l.map(function(x){return '<a class="btn btn-g sm" href="'+x[1]+'" target="_blank">'+T(x[0])+' ↗</a>';}).join('')+'</div>';
   }
   alist.addEventListener('click', function(e){ var b=e.target.closest('button'); if(b) pickAlbum(+b.getAttribute('data-i')); });
   pickAlbum(0);
@@ -1112,21 +1398,21 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
   /* ---------------- 페이지 이동 ---------------- */
   var hdr = document.getElementById('hdr'), phero = document.getElementById('phero'), lnb = document.getElementById('lnb');
   var cur = null;
-  function show(id){
+  function show(id, keep){
     if (!PAGES[id]) id = 'home';
     var p = PAGES[id];
     [].forEach.call(document.querySelectorAll('.page'), function(s){ s.classList.toggle('on', s.id===id); });
     if (id==='home'){ phero.innerHTML=''; lnb.innerHTML=''; }
     else {
       phero.innerHTML = '<div class="phero"><div class="bg" style="background-image:url('+p.bg+')"></div><div class="ct">'+
-        '<div class="crumb"><a href="#home">HOME</a><span>'+p.gt+'</span><span>'+p.t+'</span></div><div class="eb">'+p.gt+'</div><h1>'+p.t+'</h1><p>'+p.d+'</p></div></div>';
-      var sib = GROUPS[p.g];
-      lnb.innerHTML = sib.length>1 ? '<nav class="lnb"><div class="ct">'+sib.map(function(s){return '<a href="#'+s+'"'+(s===id?' class="on"':'')+'>'+NAMES[s]+'</a>';}).join('')+'</div></nav>' : '';
+        '<div class="crumb"><a href="#home">HOME</a><span>'+p.gt+'</span><span>'+T(p.t)+'</span></div><div class="eb">'+p.gt+'</div><h1>'+T(p.t)+'</h1><p>'+T(p.d)+'</p></div></div>';
+      var sib = GROUPS[p.g].filter(function(s){ return !(isEn() && s==='jobs' && id!=='jobs'); });
+      lnb.innerHTML = sib.length>1 ? '<nav class="lnb"><div class="ct">'+sib.map(function(s){return '<a href="#'+s+'"'+(s===id?' class="on"':'')+'>'+T(NAMES[s])+'</a>';}).join('')+'</div></nav>' : '';
     }
     [].forEach.call(document.querySelectorAll('.gi'), function(g){ g.classList.toggle('on', g.getAttribute('data-g')===p.g); });
     [].forEach.call(document.querySelectorAll('.sub a'), function(a){ a.classList.toggle('on', a.getAttribute('href')==='#'+id); });
-    document.title = (id==='home' ? '금나림 NARIM · Singer-Songwriter & Performer' : NAMES[id]+' · 금나림 NARIM');
-    if (cur !== null) window.scrollTo({top:0,left:0,behavior:"instant"});
+    document.title = (id==='home' ? (isEn() ? 'NARIM · Singer-Songwriter & Performer' : '금나림 NARIM · Singer-Songwriter & Performer') : T(NAMES[id])+(isEn() ? ' · NARIM' : ' · 금나림 NARIM'));
+    if (cur !== null && !keep) window.scrollTo({top:0,left:0,behavior:"instant"});
     cur = id;
     document.body.classList.remove('mopen'); hdr.classList.remove('open');
     onScroll();
@@ -1189,7 +1475,53 @@ table.tb{width:100%;border-collapse:collapse;font-size:15px}
   }
   prog();
 
-  drawShorts('all');
+  /* ---------------- 언어 전환 ---------------- */
+  function applyStatic(){
+    [].forEach.call(document.querySelectorAll('[data-en]'), function(el){
+      if (el.__ko == null) el.__ko = el.innerHTML;
+      el.innerHTML = isEn() ? el.getAttribute('data-en') : el.__ko;
+    });
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), n, k;
+    while ((n = w.nextNode())){
+      var par = n.parentNode && n.parentNode.nodeName;
+      if (par === 'SCRIPT' || par === 'STYLE') continue;
+      if (n.__ko == null){ k = n.nodeValue.trim(); if (!k || !Object.prototype.hasOwnProperty.call(EN, k)) continue; n.__ko = n.nodeValue; }
+      k = n.__ko.trim();
+      n.nodeValue = isEn() ? n.__ko.replace(k, EN[k]) : n.__ko;
+    }
+    [].forEach.call(document.querySelectorAll('[alt],[aria-label]'), function(el){
+      ['alt','aria-label'].forEach(function(at){
+        if (!el.hasAttribute(at)) return;
+        el.__koA = el.__koA || {};
+        if (el.__koA[at] == null){ var v = el.getAttribute(at); if (!Object.prototype.hasOwnProperty.call(EN, v)) return; el.__koA[at] = v; }
+        el.setAttribute(at, T(el.__koA[at]));
+      });
+    });
+  }
+  function setLang(l, first){
+    LANG = l === 'en' ? 'en' : 'ko';
+    document.documentElement.lang = LANG;
+    try { localStorage.setItem('narim-lang', LANG); } catch(e){}
+    if (!first && /[?&]lang=/.test(location.search)){
+      try { history.replaceState(null, '', location.pathname + '?lang=' + LANG + location.hash); } catch(e){}
+    }
+    [].forEach.call(document.querySelectorAll('#langsw button'), function(b){
+      var on = b.getAttribute('data-lang') === LANG;
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    document.getElementById('careerTop').setAttribute('href', isEn() ? '#edu' : '#jobs');
+    renderLists(); renderAlbums(); pickAlbum(curA); drawShorts(curF); setThumbs();
+    applyStatic();
+    if (!first && cur){
+      show(cur, true);
+      [].forEach.call(document.querySelectorAll('.page.on .rv'), function(el){ el.classList.add('in'); });
+    }
+  }
+  document.getElementById('langsw').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (b) setLang(b.getAttribute('data-lang'));
+  });
+
+  setLang(LANG, true);
   route();
 })();
 </script>
